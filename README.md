@@ -2,4 +2,4 @@
 Made by:
 Gabriel Preto,
 Humberto Julião,
-Sidney Daniel
+Sidney Daniel.
