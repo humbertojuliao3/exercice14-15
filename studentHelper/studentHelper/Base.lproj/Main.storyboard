@@ -13,6 +13,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Buscar Tarefas" id="M0b-Nh-ewq">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="2Bf-JR-2at" id="vtt-Q0-kJQ"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="3" indentationWidth="10" reuseIdentifier="TarefaCell" rowHeight="94" id="WOX-nX-0Mg" customClass="TarefasCell" customModule="studentHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -85,8 +93,20 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Cg5-85-Qes" id="wKb-2w-sKk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rqW-xV-ob0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Cg5-85-Qes">
+                    <connections>
+                        <outlet property="delegate" destination="2Bf-JR-2at" id="Uge-yy-n2F"/>
+                        <outlet property="searchBar" destination="M0b-Nh-ewq" id="kxP-Ep-c1q"/>
+                        <outlet property="searchContentsController" destination="2Bf-JR-2at" id="9Wz-ON-TNG"/>
+                        <outlet property="searchResultsDataSource" destination="2Bf-JR-2at" id="kty-CE-YQf"/>
+                        <outlet property="searchResultsDelegate" destination="2Bf-JR-2at" id="FgP-eB-78d"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="687" y="-2402"/>
         </scene>

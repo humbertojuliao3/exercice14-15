@@ -33,6 +33,8 @@ class EditarTarefaViewController: UITableViewController {
         datePicker.date = tarefasArray[indexSelected].dataEntrega
         textNota.text = tarefasArray[indexSelected].nota.description
         
+        datePicker.minimumDate = NSDate()
+        
         if tarefasArray[indexSelected].status {
             switchStatus.setOn(true, animated: true)
         }

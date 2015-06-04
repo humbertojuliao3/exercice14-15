@@ -30,12 +30,31 @@ var indexSelected: Int!
 class TarefasViewController: UITableViewController {
     //Tuplas para testes na Table View
     
+    var labelEmpty: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelection = false
-                
+        
+        labelEmpty = UILabel()
+        labelEmpty.text = "Nenhuma tarefa encontrada"
+        labelEmpty.font = UIFont(name: "Helvetica Neue Light", size: 16)
+        labelEmpty.textColor = UIColor.darkGrayColor()
+        labelEmpty.textAlignment = NSTextAlignment.Center
+        labelEmpty.sizeToFit()
+        labelEmpty.frame = CGRectMake((self.tableView.bounds.size.width - labelEmpty.bounds.size.width) / 2,
+            (self.tableView.bounds.size.height - labelEmpty.bounds.size.height) / 2,
+            labelEmpty.bounds.size.width,
+            labelEmpty.bounds.size.height)
+        self.tableView.insertSubview(labelEmpty, atIndex: 0)
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        labelEmpty.frame = CGRectMake((size.width - labelEmpty.bounds.size.width) / 2,
+            (size.height - labelEmpty.bounds.size.height) / 2,
+            labelEmpty.bounds.size.width,
+            labelEmpty.bounds.size.height)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,6 +90,15 @@ class TarefasViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if  tarefasArray.count == 0{
+            labelEmpty.hidden = false
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        }
+        else{
+            labelEmpty.hidden = true
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        }
+        
         return tarefasArray.count
     }
     

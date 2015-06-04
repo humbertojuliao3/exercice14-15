@@ -21,6 +21,8 @@ class AdicionarTarefaViewController: UITableViewController {
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "removerTeclado")
         view.addGestureRecognizer(tap)
         
+        datePicker.minimumDate = NSDate()
+        
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
