@@ -12,14 +12,13 @@ class Alarme{
     var disciplina: String = ""
     var nomeAvaliacao: String = ""
     var dataEntrega:NSDate
-    var status: String!
+    var status: Bool = true
     var nota:Float!
     
     init(nome: String, materia: String, data: NSDate) {
         disciplina = materia
         nomeAvaliacao = nome
         dataEntrega = data
-        status = "fazendo"
-        nota = 99.0
+        nota = 99.9
     }
 }

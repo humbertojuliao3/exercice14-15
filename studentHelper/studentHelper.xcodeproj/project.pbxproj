@@ -15,6 +15,7 @@
 		5C6495D31B1DCD560038D782 /* studentHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495D21B1DCD560038D782 /* studentHelperTests.swift */; };
 		5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495DE1B1DF8610038D782 /* Alarme.swift */; };
 		5E356F791B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */; };
+		5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */; };
 		5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		5C6495D21B1DCD560038D782 /* studentHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentHelperTests.swift; sourceTree = "<group>"; };
 		5C6495DE1B1DF8610038D782 /* Alarme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarme.swift; sourceTree = "<group>"; };
 		5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarTarefaViewController.swift; sourceTree = "<group>"; };
+		5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarTarefaViewController.swift; sourceTree = "<group>"; };
 		5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				5C6495DE1B1DF8610038D782 /* Alarme.swift */,
 				5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */,
 				5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */,
+				5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */,
 				5C6495C01B1DCD560038D782 /* Main.storyboard */,
 				5C6495C31B1DCD560038D782 /* Images.xcassets */,
 				5C6495C51B1DCD560038D782 /* LaunchScreen.xib */,
@@ -225,6 +228,7 @@
 				5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */,
 				5C6495BA1B1DCD560038D782 /* AppDelegate.swift in Sources */,
 				5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */,
+				5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */,
 				5C6495BD1B1DCD560038D782 /* studentHelper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

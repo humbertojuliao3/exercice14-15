@@ -17,6 +17,8 @@ let tuple3 = (materia: "Geografia", nome: "Trabalho de Mapas", data: "23/06/2014
 let tuple4 = (materia: "Geografia", nome: "Prova 1", data: "20/06/2014 (19:00)")
 let tuple5 = (materia: "História", nome: "Prova Final", data: "21/06/2014 (20:05)")
 
+var indexSelected: Int!
+
 //var tarefasArray: [(materia: String, nome:String, data: String)] = [
 //    tuple1,
 //    tuple2,
@@ -36,8 +38,8 @@ class TarefasViewController: UITableViewController {
                 
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         
         tableView.reloadData()
         
@@ -84,6 +86,10 @@ class TarefasViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        indexSelected = indexPath.row
+    }
+    
     @IBAction func editarItemAction(sender: AnyObject) {
         if editing {
             super.setEditing(false, animated: false)
@@ -93,9 +99,12 @@ class TarefasViewController: UITableViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if sender!.identifier == "alterar" {
+//            let view = segue.destinationViewController as! EditarTarefaViewController
+//            view.tarefaTitulo
+//        }
+//    }
     
     
 }

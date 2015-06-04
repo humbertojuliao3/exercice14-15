@@ -20,6 +20,7 @@ class AdicionarTarefaViewController: UITableViewController {
         //Remover Teclado
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "removerTeclado")
         view.addGestureRecognizer(tap)
+        
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -36,10 +37,6 @@ class AdicionarTarefaViewController: UITableViewController {
             }
         }        
     }
-    
-    
-    
-    
     
     func removerTeclado(){
         view.endEditing(true)
