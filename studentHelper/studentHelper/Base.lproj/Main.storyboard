@@ -2,18 +2,19 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l8r-zj-Tts">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tarefas-->
         <scene sceneID="RCk-6S-Kz9">
             <objects>
-                <tableViewController id="2Bf-JR-2at" sceneMemberID="viewController">
+                <tableViewController id="2Bf-JR-2at" customClass="TarefasViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="4rX-NH-flD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationLevel="3" indentationWidth="10" rowHeight="94" id="WOX-nX-0Mg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationLevel="3" indentationWidth="10" reuseIdentifier="TarefaCell" rowHeight="94" id="WOX-nX-0Mg" customClass="TarefasCell" customModule="studentHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOX-nX-0Mg" id="i3n-0M-CkZ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -28,10 +29,10 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/06/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okh-uB-7sA">
-                                            <rect key="frame" x="19" y="58" width="127" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/06/2015 (18:30)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okh-uB-7sA">
+                                            <rect key="frame" x="19" y="58" width="196" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="127" id="b1f-9W-brH"/>
+                                                <constraint firstAttribute="width" constant="196" id="4pA-Jj-XxS"/>
                                                 <constraint firstAttribute="height" constant="21" id="gJq-X5-3Ad"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
@@ -50,15 +51,18 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerX" secondItem="CWl-de-AOV" secondAttribute="centerX" constant="26.5" id="2J0-DA-xXQ"/>
-                                        <constraint firstAttribute="centerY" secondItem="Ebx-1D-5ai" secondAttribute="centerY" constant="3.25" id="HR4-9k-V3M"/>
-                                        <constraint firstAttribute="centerX" secondItem="okh-uB-7sA" secondAttribute="centerX" constant="201" id="O1E-QE-5nJ"/>
-                                        <constraint firstAttribute="centerX" secondItem="Ebx-1D-5ai" secondAttribute="centerX" constant="111" id="Zx6-SM-QgT"/>
-                                        <constraint firstAttribute="centerY" secondItem="CWl-de-AOV" secondAttribute="centerY" constant="21.75" id="iOb-3U-vB1"/>
-                                        <constraint firstAttribute="centerY" secondItem="okh-uB-7sA" secondAttribute="centerY" constant="-21.75" id="wmj-Wz-8xg"/>
+                                        <constraint firstItem="CWl-de-AOV" firstAttribute="top" secondItem="i3n-0M-CkZ" secondAttribute="topMargin" constant="5" id="2p5-pE-cs7"/>
+                                        <constraint firstItem="CWl-de-AOV" firstAttribute="leading" secondItem="i3n-0M-CkZ" secondAttribute="leadingMargin" constant="11" id="3WK-UI-9gp"/>
+                                        <constraint firstItem="Ebx-1D-5ai" firstAttribute="leading" secondItem="i3n-0M-CkZ" secondAttribute="leadingMargin" constant="11" id="6Dw-NF-d6g"/>
+                                        <constraint firstItem="okh-uB-7sA" firstAttribute="leading" secondItem="i3n-0M-CkZ" secondAttribute="leadingMargin" constant="11" id="Kmn-wf-hzE"/>
+                                        <constraint firstItem="okh-uB-7sA" firstAttribute="top" secondItem="i3n-0M-CkZ" secondAttribute="topMargin" constant="50" id="Lsn-pJ-3yx"/>
+                                        <constraint firstItem="Ebx-1D-5ai" firstAttribute="top" secondItem="i3n-0M-CkZ" secondAttribute="topMargin" constant="25" id="nHT-JW-poB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="labelData" destination="okh-uB-7sA" id="xHf-ZN-4U3"/>
+                                    <outlet property="labelMateria" destination="Ebx-1D-5ai" id="Y1a-lf-Ksp"/>
+                                    <outlet property="labelTitulo" destination="CWl-de-AOV" id="ouf-OV-hJz"/>
                                     <segue destination="bnh-GL-aR1" kind="push" id="6ap-i9-lPg"/>
                                 </connections>
                             </tableViewCell>
@@ -69,6 +73,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tarefas" id="ajr-TU-RBo">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="2xB-BQ-Gog">
+                            <connections>
+                                <action selector="editarItemAction:" destination="2Bf-JR-2at" id="w8O-zm-hIf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XR0-Yd-5r2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -86,7 +95,7 @@
             <objects>
                 <tableViewController id="cJc-nk-len" customClass="AdicionarTarefaViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ca9-58-Amj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.67000001669999998" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="deviceRGB"/>
@@ -100,6 +109,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Título" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QYP-oB-Itf">
                                                     <rect key="frame" x="16" y="7" width="567" height="30"/>
+                                                    <color key="tintColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -113,6 +123,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Matéria" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="egA-uH-dn6">
                                                     <rect key="frame" x="17" y="8" width="567" height="30"/>
+                                                    <color key="tintColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -121,7 +132,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle=" " id="cD5-8S-J4A">
+                            <tableViewSection headerTitle=" Data da Tarefa" id="cD5-8S-J4A">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="jd1-Xy-tkM">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -162,6 +173,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <keyCommands/>
+                    <connections>
+                        <outlet property="datePicker" destination="rAI-X4-sfB" id="s8S-Nt-a3u"/>
+                        <outlet property="textMateria" destination="egA-uH-dn6" id="Qh3-Lb-8xZ"/>
+                        <outlet property="textTitulo" destination="QYP-oB-Itf" id="2gj-CX-cfV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9So-n7-Ota" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +192,7 @@
                         <viewControllerLayoutGuide type="bottom" id="I7a-KZ-cfP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JfB-2g-Unx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -195,7 +211,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4kf-IM-lLo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cba-kc-ve3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="y0v-BJ-cV6">
@@ -223,7 +239,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lBQ-ZO-iMG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CJl-a1-gs3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ILA-3d-Ziz" propertyAccessControl="all">
@@ -248,7 +264,7 @@
                 <tabBarController id="l8r-zj-Tts" sceneMemberID="viewController">
                     <keyCommands/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="0XE-cX-gxy">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0XE-cX-gxy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
