@@ -9,19 +9,21 @@
 import Foundation
 import UIKit
 
+var tarefasArray: [Alarme] = []
+
 let tuple1 = (materia: "Matematica", nome: "Prova 1", data: "20/06/2014 (18:30)")
 let tuple2 = (materia: "Matematica", nome: "Prova 2", data: "25/06/2014 (21:00)")
 let tuple3 = (materia: "Geografia", nome: "Trabalho de Mapas", data: "23/06/2014 (23:55)")
 let tuple4 = (materia: "Geografia", nome: "Prova 1", data: "20/06/2014 (19:00)")
 let tuple5 = (materia: "História", nome: "Prova Final", data: "21/06/2014 (20:05)")
 
-var tarefasArray: [(materia: String, nome:String, data: String)] = [
-    tuple1,
-    tuple2,
-    tuple3,
-    tuple4,
-    tuple5
-]
+//var tarefasArray: [(materia: String, nome:String, data: String)] = [
+//    tuple1,
+//    tuple2,
+//    tuple3,
+//    tuple4,
+//    tuple5
+//]
 
 class TarefasViewController: UITableViewController {
     //Tuplas para testes na Table View
@@ -46,9 +48,20 @@ class TarefasViewController: UITableViewController {
         
         var cell: TarefasCell = tableView.dequeueReusableCellWithIdentifier("TarefaCell", forIndexPath: indexPath) as! TarefasCell
         
-        cell.labelTitulo.text = tarefasArray[indexPath.row].nome
-        cell.labelMateria.text = tarefasArray[indexPath.row].materia
-        cell.labelData.text = tarefasArray[indexPath.row].data
+        var data = tarefasArray[indexPath.row].dataEntrega
+        var dataFormatada = NSDateFormatter()
+        var horaFormatada = NSDateFormatter()
+        
+        dataFormatada.dateFormat = "dd/MM/yyyy"
+        horaFormatada.dateFormat = "HH:mm"
+        
+        var dataString = dataFormatada.stringFromDate(data)
+        var horaString = horaFormatada.stringFromDate(data)
+        
+        
+        cell.labelTitulo.text = tarefasArray[indexPath.row].nomeAvaliacao
+        cell.labelMateria.text = tarefasArray[indexPath.row].disciplina
+        cell.labelData.text = "\(dataString) (\(horaString))"
         
         
         
@@ -78,6 +91,10 @@ class TarefasViewController: UITableViewController {
         else {
             super.setEditing(true, animated: true)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
     }
     
     

@@ -8,17 +8,17 @@
 
 import UIKit
 
-class Alarme: NSObject {
-    var disciplina:NSString = ""
-    var nomeAvaliacao:NSString = ""
+class Alarme{
+    var disciplina: String = ""
+    var nomeAvaliacao: String = ""
     var dataEntrega:NSDate
-    var status:NSString
-    var nota:Float
+    var status: String!
+    var nota:Float!
     
-    override init() {
-        disciplina = ""  // Em outros construtores, apenas modifica-se disciplina, nomeAvaliacao e dataEntrega, mantendo status e nota como aqui está.
-        nomeAvaliacao = ""
-        dataEntrega = NSDate()
+    init(nome: String, materia: String, data: NSDate) {
+        disciplina = materia
+        nomeAvaliacao = nome
+        dataEntrega = data
         status = "fazendo"
         nota = 99.0
     }

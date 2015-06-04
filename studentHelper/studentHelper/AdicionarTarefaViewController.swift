@@ -30,7 +30,8 @@ class AdicionarTarefaViewController: UITableViewController {
         
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
-                tarefasArray.append(materia: "Inglês", nome: "Prova Final", data: "03/06/2015 (20:24)")
+                let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
+                tarefasArray.append(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
         }        

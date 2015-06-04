@@ -63,7 +63,7 @@
                                     <outlet property="labelData" destination="okh-uB-7sA" id="xHf-ZN-4U3"/>
                                     <outlet property="labelMateria" destination="Ebx-1D-5ai" id="Y1a-lf-Ksp"/>
                                     <outlet property="labelTitulo" destination="CWl-de-AOV" id="ouf-OV-hJz"/>
-                                    <segue destination="bnh-GL-aR1" kind="push" id="6ap-i9-lPg"/>
+                                    <segue destination="bnh-GL-aR1" kind="push" identifier="" id="6ap-i9-lPg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
