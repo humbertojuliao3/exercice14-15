@@ -47,17 +47,21 @@ class EditarTarefaViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
+    
     @IBAction func salvarAction(sender: AnyObject) {
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
                 let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
-                tarefa.nota = (textNota.text as NSString).floatValue
+                
                 if switchStatus.on {
                     tarefa.status = true
                 }
                 else{
                     tarefa.status = false
                 }
+                
+                
+                tarefa.nota = (textNota.text as String).floatConverter
                 
                 tarefasArray[indexSelected] = tarefa
                 
@@ -69,5 +73,21 @@ class EditarTarefaViewController: UITableViewController {
     
     func removerTeclado(){
         view.endEditing(true)
+    }
+}
+
+extension String {
+    var floatConverter: Float {
+        let converter = NSNumberFormatter()
+        converter.decimalSeparator = "."
+        if let result = converter.numberFromString(self) {
+            return result.floatValue
+        } else {
+            converter.decimalSeparator = ","
+            if let result = converter.numberFromString(self) {
+                return result.floatValue
+            }
+        }
+        return 0
     }
 }

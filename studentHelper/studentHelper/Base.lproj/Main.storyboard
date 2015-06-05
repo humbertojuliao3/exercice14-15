@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SI-9W-eIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="-1064"/>
+            <point key="canvasLocation" x="699" y="-1046"/>
         </scene>
         <!--Avaliações-->
         <scene sceneID="Jzf-rs-RSW">
@@ -430,7 +430,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oy1-tc-s9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="-1064"/>
+            <point key="canvasLocation" x="7" y="-1046"/>
         </scene>
         <!--Desempenho-->
         <scene sceneID="brj-Xk-kZy">
@@ -483,7 +483,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.8980392157" green="0.0" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.91372549020000005" green="0.0" blue="0.23010006559999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="eFX-km-zlf" kind="relationship" relationship="viewControllers" id="z5P-EZ-nuR"/>
@@ -504,7 +504,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KIi-ce-19n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.8980392157" green="0.0" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.93983960151672363" green="0.12425797432661057" blue="0.27777901291847229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
@@ -520,9 +520,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avaliacoes" width="32" height="32"/>
-        <image name="desempenho" width="32" height="32"/>
-        <image name="tarefas" width="32" height="32"/>
+        <image name="avaliacoes" width="30" height="30"/>
+        <image name="desempenho" width="30" height="23"/>
+        <image name="tarefas" width="30" height="30"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

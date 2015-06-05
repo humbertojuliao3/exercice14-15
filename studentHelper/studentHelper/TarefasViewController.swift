@@ -10,25 +10,11 @@ import Foundation
 import UIKit
 
 var tarefasArray: [Alarme] = []
-
-let tuple1 = (materia: "Matematica", nome: "Prova 1", data: "20/06/2014 (18:30)")
-let tuple2 = (materia: "Matematica", nome: "Prova 2", data: "25/06/2014 (21:00)")
-let tuple3 = (materia: "Geografia", nome: "Trabalho de Mapas", data: "23/06/2014 (23:55)")
-let tuple4 = (materia: "Geografia", nome: "Prova 1", data: "20/06/2014 (19:00)")
-let tuple5 = (materia: "História", nome: "Prova Final", data: "21/06/2014 (20:05)")
-
 var indexSelected: Int!
 
-//var tarefasArray: [(materia: String, nome:String, data: String)] = [
-//    tuple1,
-//    tuple2,
-//    tuple3,
-//    tuple4,
-//    tuple5
-//]
-
-class TarefasViewController: UITableViewController {
-    //Tuplas para testes na Table View
+class TarefasViewController: UITableViewController{
+    
+    var filteredTarefas = [Alarme]()
     
     var labelEmpty: UILabel!
     
@@ -63,6 +49,7 @@ class TarefasViewController: UITableViewController {
         tableView.reloadData()
         
         println(tarefasArray)
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -126,15 +113,6 @@ class TarefasViewController: UITableViewController {
             super.setEditing(true, animated: true)
         }
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if sender!.identifier == "alterar" {
-//            let view = segue.destinationViewController as! EditarTarefaViewController
-//            view.tarefaTitulo
-//        }
-//    }
-    
-    
 }
 
 
