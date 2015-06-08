@@ -35,9 +35,26 @@ class AdicionarTarefaViewController: UITableViewController {
             if !textMateria.text.isEmpty{
                 let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
                 tarefasArray.append(tarefa)
+                preparaAlarme()
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                
             }
         }        
+    }
+    
+    func preparaAlarme(){
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            
+            
+            println("This is run on the background queue")
+            if NSDate() == self.datePicker.date {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    println("This is run on the main queue, after the previous code in outer block")
+                })
+            }
+        })
     }
     
     func removerTeclado(){
