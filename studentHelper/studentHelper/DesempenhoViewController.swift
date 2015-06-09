@@ -113,6 +113,7 @@ class DesempenhoViewController: UITableViewController {
             let alerta: UIAlertController = UIAlertController (title: "Compartilhar minhas Notas", message: "Selecione uma opção para compartilhar o seu desempenho", preferredStyle: .ActionSheet)
         
             let facebookAction: UIAlertAction = UIAlertAction (title: "Facebook", style: .Default) { action -> Void in
+                
                 if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {
                     
                     var fbShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
@@ -168,7 +169,7 @@ class DesempenhoViewController: UITableViewController {
         
             let cancelarAction: UIAlertAction = UIAlertAction(title: "Cancelar", style: .Cancel) { action -> Void in}
             alerta.addAction(cancelarAction)
-        
+            
             self.presentViewController(alerta, animated: true, completion: nil)
         }
     }
