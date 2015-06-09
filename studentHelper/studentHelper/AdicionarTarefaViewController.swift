@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +33,24 @@ class AdicionarTarefaViewController: UITableViewController {
     }
     
     @IBAction func adicionarTarefa(sender: AnyObject) {
-        
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
+                
+                //getting the description
+                let sDescription = NSEntityDescription.entityForName("Alerta", inManagedObjectContext: moContext!)
+                
+                //creating the Maneged Object to put in the CoreData
+                let alertaN = Alerta(entity:sDescription!, insertIntoManagedObjectContext: moContext)
+                
+                //treating errors
+                let error:NSError?
+                
+                //saving...
+                
                 let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
                 tarefasArray.append(tarefa)
+                
+                //save complete.
                 self.navigationController?.popToRootViewControllerAnimated(true)
             }
         }        

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C4AA45F1B2385D10097C91F /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AA45E1B2385D10097C91F /* Alerta.swift */; };
 		5C6495BA1B1DCD560038D782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495B91B1DCD560038D782 /* AppDelegate.swift */; };
 		5C6495BD1B1DCD560038D782 /* studentHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495BB1B1DCD560038D782 /* studentHelper.xcdatamodeld */; };
 		5C6495C21B1DCD560038D782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6495C01B1DCD560038D782 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C4AA45E1B2385D10097C91F /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = ../Alerta.swift; sourceTree = "<group>"; };
 		5C6495B41B1DCD560038D782 /* studentHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studentHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6495B81B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495B91B1DCD560038D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				5C6495B91B1DCD560038D782 /* AppDelegate.swift */,
+				5C4AA45E1B2385D10097C91F /* Alerta.swift */,
 				5C6495DE1B1DF8610038D782 /* Alarme.swift */,
 				5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */,
 				5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */,
@@ -230,6 +233,7 @@
 				5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */,
 				5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */,
 				5C6495BD1B1DCD560038D782 /* studentHelper.xcdatamodeld in Sources */,
+				5C4AA45F1B2385D10097C91F /* Alerta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
