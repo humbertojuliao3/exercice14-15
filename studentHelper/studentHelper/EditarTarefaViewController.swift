@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class EditarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
@@ -20,6 +21,10 @@ class EditarTarefaViewController: UITableViewController {
     var tarefaDisciplina: String!
     var tarefaData: NSDate!
     var indexTarefas: Int!
+    
+    var alertaN:Alerta?
+    
+    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +33,18 @@ class EditarTarefaViewController: UITableViewController {
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "removerTeclado")
         view.addGestureRecognizer(tap)
         
-        textTitulo.text = tarefasArray[indexSelected].nomeAvaliacao
-        textMateria.text = tarefasArray[indexSelected].disciplina
-        datePicker.date = tarefasArray[indexSelected].dataEntrega
-        textNota.text = tarefasArray[indexSelected].nota.description
+        alertaN = arrayData[indexSelected]
+        
+        if let s=alertaN{
+            textTitulo.text = s.nomeAvaliacao
+            textMateria.text = s.disciplina
+            datePicker.date = s.dataEntrega
+            textNota.text = s.nota.description
+        }
         
         datePicker.minimumDate = NSDate()
         
-        if tarefasArray[indexSelected].status {
+        if arrayData[indexSelected].status as Bool {
             switchStatus.setOn(true, animated: true)
         }
         else{
@@ -51,21 +60,40 @@ class EditarTarefaViewController: UITableViewController {
     @IBAction func salvarAction(sender: AnyObject) {
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
-                let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
                 
-                if switchStatus.on {
-                    tarefa.status = true
+                if alertaN == nil{
+                    //getting the description
+                    let sDescription = NSEntityDescription.entityForName("Alerta", inManagedObjectContext: moContext!)
+                
+                    //creating the Maneged Object to put in the CoreData
+                    alertaN = Alerta(entity:sDescription!, insertIntoManagedObjectContext: moContext)
                 }
-                else{
-                    tarefa.status = false
+                
+                //setting atributes
+                alertaN?.disciplina = textMateria.text
+                alertaN?.nomeAvaliacao = textTitulo.text
+                alertaN?.dataEntrega = datePicker.date
+                alertaN?.status = NSNumber(bool: false)
+                alertaN?.nota = 99.9
+                
+                //treating errors
+                var error: NSError?
+                
+                //saving...
+                moContext?.save(&error)
+                
+                //save complete.
+                
+                if let err=error {
+                    let a = UIAlertView(title: "Error", message: err.localizedFailureReason, delegate: nil, cancelButtonTitle: "OK")
+                    a.show()
+                }else{
+                    let a = UIAlertView(title: "Sucesso!", message: "Seu alarme foi salvo", delegate: nil, cancelButtonTitle: "OK")
+                    a.show()
                 }
-                
-                
-                tarefa.nota = (textNota.text as String).floatConverter
-                
-                tarefasArray[indexSelected] = tarefa
                 
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                
             }
         }
         

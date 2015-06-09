@@ -8,15 +8,19 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 var tarefasArray: [Alarme] = []
 var indexSelected: Int!
+var arrayData = [Alerta]()
 
 class TarefasViewController: UITableViewController{
     
     var filteredTarefas = [Alarme]()
     
     var labelEmpty: UILabel!
+    
+    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,11 @@ class TarefasViewController: UITableViewController{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        var error: NSError?
+        
+        let request = NSFetchRequest(entityName: "Alerta")
+        
+        arrayData = moContext?.executeFetchRequest(request, error: &error) as! [Alerta]
         
         tableView.reloadData()
         
@@ -56,7 +65,7 @@ class TarefasViewController: UITableViewController{
         
         var cell: TarefasCell = tableView.dequeueReusableCellWithIdentifier("TarefaCell", forIndexPath: indexPath) as! TarefasCell
         
-        var data = tarefasArray[indexPath.row].dataEntrega
+        var data = arrayData[indexPath.row].dataEntrega
         var dataFormatada = NSDateFormatter()
         var horaFormatada = NSDateFormatter()
         
@@ -67,8 +76,8 @@ class TarefasViewController: UITableViewController{
         var horaString = horaFormatada.stringFromDate(data)
         
         
-        cell.labelTitulo.text = tarefasArray[indexPath.row].nomeAvaliacao
-        cell.labelMateria.text = tarefasArray[indexPath.row].disciplina
+        cell.labelTitulo.text = arrayData[indexPath.row].nomeAvaliacao
+        cell.labelMateria.text = arrayData[indexPath.row].disciplina
         cell.labelData.text = "\(dataString) (\(horaString))"
         
         
@@ -77,7 +86,7 @@ class TarefasViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if  tarefasArray.count == 0{
+        if  arrayData.count == 0{
             labelEmpty.hidden = false
             tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         }
@@ -86,16 +95,23 @@ class TarefasViewController: UITableViewController{
             tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         }
         
-        return tarefasArray.count
+        return arrayData.count
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
+    //delete comming soon...
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            tarefasArray.removeAtIndex(indexPath.row)
+            
+            // remove object
+
+            moContext?.deleteObject(arrayData[indexPath.row] as NSManagedObject)
+            arrayData.removeAtIndex(indexPath.row)
+            moContext!.save(nil)
+            
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             tableView.reloadData()
         }
