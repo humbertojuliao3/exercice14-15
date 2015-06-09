@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,6 @@ class AdicionarTarefaViewController: UITableViewController {
     }
     
     @IBAction func adicionarTarefa(sender: AnyObject) {
-        
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
                 let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
