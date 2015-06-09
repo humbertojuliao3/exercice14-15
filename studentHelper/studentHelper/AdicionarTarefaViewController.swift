@@ -42,18 +42,50 @@ class AdicionarTarefaViewController: UITableViewController {
                 //creating the Maneged Object to put in the CoreData
                 let alertaN = Alerta(entity:sDescription!, insertIntoManagedObjectContext: moContext)
                 
+                //setting atributes
+                alertaN.disciplina = textMateria.text
+                alertaN.nomeAvaliacao = textTitulo.text
+                alertaN.dataEntrega = datePicker.date
+                alertaN.status = NSNumber(bool: false)
+                alertaN.nota = 99.9
+                
                 //treating errors
-                let error:NSError?
+                var error: NSError?
                 
                 //saving...
-                
-                let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
-                tarefasArray.append(tarefa)
+                moContext?.save(&error)
                 
                 //save complete.
+                
+                if let err=error {
+                    let a = UIAlertView(title: "Error", message: err.localizedFailureReason, delegate: nil, cancelButtonTitle: "OK")
+                    a.show()
+                }else{
+                    let a = UIAlertView(title: "Sucesso!", message: "Seu alarme foi salvo", delegate: nil, cancelButtonTitle: "OK")
+                    a.show()
+                }
+
+                preparaAlarme()
+
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                
             }
         }        
+    }
+    
+    func preparaAlarme(){
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            
+            
+            println("This is run on the background queue")
+            if NSDate() == self.datePicker.date {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    println("This is run on the main queue, after the previous code in outer block")
+                })
+            }
+        })
     }
     
     func removerTeclado(){
