@@ -46,7 +46,7 @@ class DesempenhoViewController: UITableViewController {
         notasArray.removeAll(keepCapacity: false)
         
         for (var i = 0; i < arrayData.count; i++){
-            if arrayData[i].nota != 99.9 {
+            if arrayData[i].nota.doubleValue != NSNumber(float: 99.9) {
                 notasArray.append(arrayData[i])
             }
         }
