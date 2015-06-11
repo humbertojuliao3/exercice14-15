@@ -15,7 +15,11 @@ class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+//    lazy var moContext:NSManagedObjectContext = {
+//        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        var c = appDelegate.managedObjectContext
+//        return c!
+//        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,19 @@ class AdicionarTarefaViewController: UITableViewController {
             if !textMateria.text.isEmpty{
                 let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
                 tarefasArray.append(tarefa)
+                
+                var alerta = AlertaManager.sharedInstance.novoAlerta()
+                alerta.nomeAvaliacao = textTitulo.text
+                alerta.disciplina = textMateria.text
+                alerta.dataEntrega = datePicker.date
+                alerta.nota = 99.9
+                alerta.status = true as NSNumber
+                AlertaManager.sharedInstance.salvar()
+                
+                self.navigationController?.popViewControllerAnimated(true)
+                
+                
+                
                 preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 

@@ -15,6 +15,7 @@
 		5C6495C71B1DCD560038D782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6495C51B1DCD560038D782 /* LaunchScreen.xib */; };
 		5C6495D31B1DCD560038D782 /* studentHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495D21B1DCD560038D782 /* studentHelperTests.swift */; };
 		5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495DE1B1DF8610038D782 /* Alarme.swift */; };
+		5E0767601B2916E5001C088B /* AlertaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07675F1B2916E5001C088B /* AlertaManager.swift */; };
 		5E356F791B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */; };
 		5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */; };
 		5ED4F7A41B2550270001C3D4 /* DesempenhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */; };
@@ -44,6 +45,7 @@
 		5C6495D11B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495D21B1DCD560038D782 /* studentHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentHelperTests.swift; sourceTree = "<group>"; };
 		5C6495DE1B1DF8610038D782 /* Alarme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarme.swift; sourceTree = "<group>"; };
+		5E07675F1B2916E5001C088B /* AlertaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaManager.swift; sourceTree = "<group>"; };
 		5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarTarefaViewController.swift; sourceTree = "<group>"; };
 		5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarTarefaViewController.swift; sourceTree = "<group>"; };
 		5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesempenhoViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +91,9 @@
 		5C6495B61B1DCD560038D782 /* studentHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5E07675E1B2916BE001C088B /* CoreData Manager */,
+				5E07675D1B2916AC001C088B /* Entidade */,
 				5C6495B91B1DCD560038D782 /* AppDelegate.swift */,
-				5C4AA45E1B2385D10097C91F /* Alerta.swift */,
 				5C6495DE1B1DF8610038D782 /* Alarme.swift */,
 				5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */,
 				5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */,
@@ -128,6 +131,22 @@
 				5C6495D11B1DCD560038D782 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E07675D1B2916AC001C088B /* Entidade */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AA45E1B2385D10097C91F /* Alerta.swift */,
+			);
+			name = Entidade;
+			sourceTree = "<group>";
+		};
+		5E07675E1B2916BE001C088B /* CoreData Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5E07675F1B2916E5001C088B /* AlertaManager.swift */,
+			);
+			name = "CoreData Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,7 @@
 			files = (
 				5ED4F7A41B2550270001C3D4 /* DesempenhoViewController.swift in Sources */,
 				5E356F791B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift in Sources */,
+				5E0767601B2916E5001C088B /* AlertaManager.swift in Sources */,
 				5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */,
 				5C6495BA1B1DCD560038D782 /* AppDelegate.swift in Sources */,
 				5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */,

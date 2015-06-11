@@ -16,11 +16,13 @@ var arrayData = [Alerta]()
 
 class TarefasViewController: UITableViewController{
     
-    var filteredTarefas = [Alarme]()
-    
     var labelEmpty: UILabel!
     
-    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    lazy var moContext:NSManagedObjectContext = {
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var c = appDelegate.managedObjectContext
+        return c!
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,7 @@ class TarefasViewController: UITableViewController{
         
         let request = NSFetchRequest(entityName: "Alerta")
         
-        arrayData = moContext?.executeFetchRequest(request, error: &error) as! [Alerta]
+        arrayData = AlertaManager.sharedInstance.buscarAlertas()
         
         tableView.reloadData()
         
@@ -108,9 +110,9 @@ class TarefasViewController: UITableViewController{
             
             // remove object
 
-            moContext?.deleteObject(arrayData[indexPath.row] as NSManagedObject)
-            arrayData.removeAtIndex(indexPath.row)
-            moContext!.save(nil)
+            AlertaManager.sharedInstance.apagarAlerta(arrayData[indexPath.row])
+            AlertaManager.sharedInstance.salvar()
+            arrayData = AlertaManager.sharedInstance.buscarAlertas()
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             tableView.reloadData()

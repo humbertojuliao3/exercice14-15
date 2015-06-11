@@ -22,9 +22,7 @@ class EditarTarefaViewController: UITableViewController {
     var tarefaData: NSDate!
     var indexTarefas: Int!
     
-    var alertaN:Alerta?
-    
-    let moContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var alertaN:Alerta!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +33,16 @@ class EditarTarefaViewController: UITableViewController {
         
         alertaN = arrayData[indexSelected]
         
-        if let s=alertaN{
-            textTitulo.text = s.nomeAvaliacao
-            textMateria.text = s.disciplina
-            datePicker.date = s.dataEntrega
-            textNota.text = s.nota.description
-        }
+        //if let s = alertaN{
+            textTitulo.text = alertaN.nomeAvaliacao
+            textMateria.text = alertaN.disciplina
+            datePicker.date = alertaN.dataEntrega
+            textNota.text = alertaN.nota.description
+        //}
         
         datePicker.minimumDate = NSDate()
         
-        if arrayData[indexSelected].status as Bool {
+        if alertaN.status as Bool {
             switchStatus.setOn(true, animated: true)
         }
         else{
@@ -61,37 +59,22 @@ class EditarTarefaViewController: UITableViewController {
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
                 
-                if alertaN == nil{
-                    //getting the description
-                    let sDescription = NSEntityDescription.entityForName("Alerta", inManagedObjectContext: moContext!)
-                
-                    //creating the Maneged Object to put in the CoreData
-                    alertaN = Alerta(entity:sDescription!, insertIntoManagedObjectContext: moContext)
-                }
-                
                 //setting atributes
-                alertaN?.disciplina = textMateria.text
-                alertaN?.nomeAvaliacao = textTitulo.text
-                alertaN?.dataEntrega = datePicker.date
-                alertaN?.status = NSNumber(bool: false)
-                alertaN?.nota = 99.9
+                alertaN.disciplina = textMateria.text
+                alertaN.nomeAvaliacao = textTitulo.text
+                alertaN.dataEntrega = datePicker.date
                 
-                //treating errors
-                var error: NSError?
+                if switchStatus.on {
+                    alertaN.status = true
+                }
+                else{
+                    alertaN.status = false
+                }
+                alertaN.nota = textNota.text.floatConverter
                 
                 //saving...
-                moContext?.save(&error)
-                
-                //save complete.
-                
-                if let err=error {
-                    let a = UIAlertView(title: "Error", message: err.localizedFailureReason, delegate: nil, cancelButtonTitle: "OK")
-                    a.show()
-                }else{
-                    let a = UIAlertView(title: "Sucesso!", message: "Seu alarme foi salvo", delegate: nil, cancelButtonTitle: "OK")
-                    a.show()
-                }
-                
+                AlertaManager.sharedInstance.salvar()
+
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
             }
