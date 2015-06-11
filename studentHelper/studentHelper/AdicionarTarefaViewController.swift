@@ -39,8 +39,6 @@ class AdicionarTarefaViewController: UITableViewController {
     @IBAction func adicionarTarefa(sender: AnyObject) {
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
-                let tarefa = Alarme(nome: textTitulo.text, materia: textMateria.text, data: datePicker.date)
-                tarefasArray.append(tarefa)
                 
                 var alerta = AlertaManager.sharedInstance.novoAlerta()
                 alerta.nomeAvaliacao = textTitulo.text
@@ -54,23 +52,23 @@ class AdicionarTarefaViewController: UITableViewController {
                 
                 
                 
-                preparaNotificacao(tarefa)
+                //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
             }
         }        
     }
     
-    func preparaNotificacao(tarefa: Alarme){
-        var notificacao = UILocalNotification()
-        notificacao.fireDate = NSDate(timeIntervalSinceNow: 5)
-        notificacao.alertTitle = "Atenção, data de tarefas chegando"
-        notificacao.alertBody = "Fique atento, pois faltas xx dias para \(tarefa.nomeAvaliacao) - \(tarefa.disciplina)"
-        notificacao.soundName = UILocalNotificationDefaultSoundName
-        UIApplication.sharedApplication().scheduleLocalNotification(notificacao)
-        
-        
-    }
+//    func preparaNotificacao(tarefa: Alarme){
+//        var notificacao = UILocalNotification()
+//        notificacao.fireDate = NSDate(timeIntervalSinceNow: 5)
+//        notificacao.alertTitle = "Atenção, data de tarefas chegando"
+//        notificacao.alertBody = "Fique atento, pois faltas xx dias para \(tarefa.nomeAvaliacao) - \(tarefa.disciplina)"
+//        notificacao.soundName = UILocalNotificationDefaultSoundName
+//        UIApplication.sharedApplication().scheduleLocalNotification(notificacao)
+//        
+//        
+//    }
     
     func removerTeclado(){
         view.endEditing(true)

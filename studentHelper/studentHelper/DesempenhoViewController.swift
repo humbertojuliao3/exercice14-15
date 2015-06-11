@@ -13,7 +13,7 @@ import Social
 class DesempenhoViewController: UITableViewController {
     var labelEmpty: UILabel!
     
-    var notasArray: Array<Alarme> = [Alarme]()
+    var notasArray: Array<Alerta> = [Alerta]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,9 @@ class DesempenhoViewController: UITableViewController {
         
         notasArray.removeAll(keepCapacity: false)
         
-        for (var i = 0; i < tarefasArray.count; i++){
-            if tarefasArray[i].nota != 99.9 {
-                notasArray.append(tarefasArray[i])
+        for (var i = 0; i < arrayData.count; i++){
+            if arrayData[i].nota != 99.9 {
+                notasArray.append(arrayData[i])
             }
         }
         //ordena o algoritmo por ordem da materia
@@ -71,13 +71,15 @@ class DesempenhoViewController: UITableViewController {
         cell.viewNota.layer.cornerRadius = 35
         cell.viewNota.clipsToBounds = true
         
-        if notasArray[indexPath.row].nota <= 4.9 {
+        var nota = notasArray[indexPath.row].nota.doubleValue
+        
+        if nota  <= 4.9 {
             cell.viewNota.backgroundColor = UIColor(red:222/265, green:70/265, blue:99/265, alpha: 1)
         }
-        else if notasArray[indexPath.row].nota >= 5.0 && notasArray[indexPath.row].nota <= 7.4 {
+        else if nota >= 5.0 && nota <= 7.4 {
             cell.viewNota.backgroundColor = UIColor(red: 251/265, green: 191/265, blue: 85/265, alpha: 1)
         }
-        else if notasArray[indexPath.row].nota >= 7.5 {
+        else if nota >= 7.5 {
             cell.viewNota.backgroundColor = UIColor(red: 82/265, green: 207/265, blue: 196/265, alpha: 1)
         }
         else{

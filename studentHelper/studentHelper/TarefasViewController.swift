@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-var tarefasArray: [Alarme] = []
 var indexSelected: Int!
 var arrayData = [Alerta]()
 
@@ -59,7 +58,7 @@ class TarefasViewController: UITableViewController{
         
         tableView.reloadData()
         
-        println(tarefasArray)
+        println(arrayData)
         
     }
     
