@@ -50,8 +50,6 @@ class AdicionarTarefaViewController: UITableViewController {
                 
                 self.navigationController?.popViewControllerAnimated(true)
                 
-                
-                
                 //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
