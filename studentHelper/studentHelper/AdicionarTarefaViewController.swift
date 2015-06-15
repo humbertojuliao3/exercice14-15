@@ -9,17 +9,14 @@
 import Foundation
 import UIKit
 import CoreData
+import EventKit
 
 class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-//    lazy var moContext:NSManagedObjectContext = {
-//        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        var c = appDelegate.managedObjectContext
-//        return c!
-//        }()
+    var eventStore = EKEventStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +44,26 @@ class AdicionarTarefaViewController: UITableViewController {
                 alerta.nota = 99.9
                 alerta.status = true as NSNumber
                 AlertaManager.sharedInstance.salvar()
-                
-                self.navigationController?.popViewControllerAnimated(true)
-                
-                
+        
+                switch EKEventStore.authorizationStatusForEntityType(EKEntityTypeEvent) {
+                case .Authorized:
+                    insereEventoiCalendar(alerta)
+                case .Denied:
+                    println("Sem Acesso")
+                case .NotDetermined:
+                    // 3
+                    eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion:
+                        {[weak self] (granted: Bool, error: NSError!) -> Void in
+                            if granted {
+                                self!.insereEventoiCalendar(alerta)
+                            }
+                            else {
+                                println("Access denied")
+                            }
+                        })
+                default:
+                    println("Case Default")
+                }
                 
                 //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
@@ -69,8 +82,37 @@ class AdicionarTarefaViewController: UITableViewController {
 //        
 //        
 //    }
+
+    func insereEventoiCalendar(alerta: Alerta) {
+        let calendars = eventStore.calendarsForEntityType(EKEntityTypeEvent)
+            as! [EKCalendar]
     
-    func removerTeclado(){
+        for calendar in calendars {
+            if calendar.title == "ioscreator" {
+                let startDate = alerta.dataEntrega
+                let endDate = startDate.dateByAddingTimeInterval(60 * 90)
+            
+                var event = EKEvent(eventStore: eventStore)
+                event.calendar = calendar
+            
+                event.title = alerta.nomeAvaliacao + " - " + alerta.disciplina
+                event.startDate = startDate
+                event.endDate = endDate
+            
+                var error: NSError?
+                let result = eventStore.saveEvent(event, span: EKSpanThisEvent, error: &error)
+            
+                if result == false {
+                    if let theError = error {
+                        println("An error occured \(theError)")
+                    }
+                }
+            }
+        }
+    }
+
+    
+    func removerTeclado() {
         view.endEditing(true)
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import EventKit
 
 class EditarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
