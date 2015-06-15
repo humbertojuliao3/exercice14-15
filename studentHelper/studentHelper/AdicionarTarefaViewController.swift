@@ -36,13 +36,21 @@ class AdicionarTarefaViewController: UITableViewController {
     @IBAction func adicionarTarefa(sender: AnyObject) {
         if !textTitulo.text.isEmpty{
             if !textMateria.text.isEmpty{
-                
+                var statusString = ""
+                var data = ""
                 var alerta = AlertaManager.sharedInstance.novoAlerta()
                 alerta.nomeAvaliacao = textTitulo.text
                 alerta.disciplina = textMateria.text
                 alerta.dataEntrega = datePicker.date
                 alerta.nota = 99.9
+                var notaString = "\(alerta.nota)"
                 alerta.status = true as NSNumber
+                if alerta.status == 0 {
+                    statusString = "Não realizado"
+                }else{
+                    statusString = "Realizado"
+                }
+                var dataString = "\(alerta.dataEntrega)"
                 AlertaManager.sharedInstance.salvar()
         
                 switch EKEventStore.authorizationStatusForEntityType(EKEntityTypeEvent) {
@@ -67,6 +75,8 @@ class AdicionarTarefaViewController: UITableViewController {
                 
                 //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
+                
+                cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: statusString, nota: notaString, data: dataString)
                 
             }
         }        
