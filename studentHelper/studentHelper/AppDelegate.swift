@@ -19,10 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
-            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
-        
-        
         return true
     }
 

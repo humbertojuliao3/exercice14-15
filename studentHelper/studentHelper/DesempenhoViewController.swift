@@ -11,7 +11,7 @@ import UIKit
 import Social
 
 class DesempenhoViewController: UITableViewController {
-    var labelEmpty: UILabel!
+    var labelEmpty: UILabel = UILabel()
     
     var notasArray: Array<Alerta> = [Alerta]()
     
@@ -20,7 +20,6 @@ class DesempenhoViewController: UITableViewController {
         
         tableView.allowsMultipleSelection = false
         
-        labelEmpty = UILabel()
         labelEmpty.text = "Nenhuma tarefa com nota encontrada"
         labelEmpty.font = UIFont(name: "Helvetica Neue Light", size: 16)
         labelEmpty.textColor = UIColor.darkGrayColor()

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 import CoreData
 
 var indexSelected: Int!
@@ -39,6 +40,11 @@ class TarefasViewController: UITableViewController{
             labelEmpty.bounds.size.width,
             labelEmpty.bounds.size.height)
         self.tableView.insertSubview(labelEmpty, atIndex: 0)
+        
+        if !EventNotificationManager.singleton.verificaAutorizacao() {
+            EventNotificationManager.singleton.store.requestAccessToEntityType(EKEntityTypeEvent, completion:
+                {[weak self] (granted: Bool, error: NSError!) -> Void in })
+        }
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {

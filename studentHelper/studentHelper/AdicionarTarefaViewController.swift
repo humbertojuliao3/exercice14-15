@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 import CoreData
-import EventKit
 
 class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textTitulo: UITextField!
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
-    var eventStore = EKEventStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,28 +49,13 @@ class AdicionarTarefaViewController: UITableViewController {
                 }
                 var dataString = "\(alerta.dataEntrega)"
                 AlertaManager.sharedInstance.salvar()
-        
-                switch EKEventStore.authorizationStatusForEntityType(EKEntityTypeEvent) {
-                case .Authorized:
-                    insereEventoiCalendar(alerta)
-                case .Denied:
-                    println("Sem Acesso")
-                case .NotDetermined:
-                    // 3
-                    eventStore.requestAccessToEntityType(EKEntityTypeEvent, completion:
-                        {[weak self] (granted: Bool, error: NSError!) -> Void in
-                            if granted {
-                                self!.insereEventoiCalendar(alerta)
-                            }
-                            else {
-                                println("Access denied")
-                            }
-                        })
-                default:
-                    println("Case Default")
+                
+                // Cria Evento
+                if EventNotificationManager.singleton.verificaAutorizacao() {
+                    EventNotificationManager.singleton.novoCalendario()
+                    EventNotificationManager.singleton.novoEvento(alerta)
                 }
                 
-                //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
                 cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: statusString, nota: notaString, data: dataString)
@@ -81,45 +63,7 @@ class AdicionarTarefaViewController: UITableViewController {
             }
         }        
     }
-    
-//    func preparaNotificacao(tarefa: Alarme){
-//        var notificacao = UILocalNotification()
-//        notificacao.fireDate = NSDate(timeIntervalSinceNow: 5)
-//        notificacao.alertTitle = "Atenção, data de tarefas chegando"
-//        notificacao.alertBody = "Fique atento, pois faltas xx dias para \(tarefa.nomeAvaliacao) - \(tarefa.disciplina)"
-//        notificacao.soundName = UILocalNotificationDefaultSoundName
-//        UIApplication.sharedApplication().scheduleLocalNotification(notificacao)
-//        
-//        
-//    }
 
-    func insereEventoiCalendar(alerta: Alerta) {
-        let calendars = eventStore.calendarsForEntityType(EKEntityTypeEvent)
-            as! [EKCalendar]
-    
-        for calendar in calendars {
-            if calendar.title == "ioscreator" {
-                let startDate = alerta.dataEntrega
-                let endDate = startDate.dateByAddingTimeInterval(60 * 90)
-            
-                var event = EKEvent(eventStore: eventStore)
-                event.calendar = calendar
-            
-                event.title = alerta.nomeAvaliacao + " - " + alerta.disciplina
-                event.startDate = startDate
-                event.endDate = endDate
-            
-                var error: NSError?
-                let result = eventStore.saveEvent(event, span: EKSpanThisEvent, error: &error)
-            
-                if result == false {
-                    if let theError = error {
-                        println("An error occured \(theError)")
-                    }
-                }
-            }
-        }
-    }
 
     
     func removerTeclado() {
