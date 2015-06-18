@@ -114,10 +114,12 @@ class TarefasViewController: UITableViewController{
         if editingStyle == UITableViewCellEditingStyle.Delete {
             
             // remove object
-
+            EventNotificationManager.singleton.apagarEvento(arrayData[indexPath.row])
             AlertaManager.sharedInstance.apagarAlerta(arrayData[indexPath.row])
             AlertaManager.sharedInstance.salvar()
             arrayData = AlertaManager.sharedInstance.buscarAlertas()
+            
+            
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             tableView.reloadData()

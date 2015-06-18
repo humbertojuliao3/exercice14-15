@@ -70,6 +70,7 @@ class EditarTarefaViewController: UITableViewController {
                 }
                 else{
                     alertaN.status = false
+                    EventNotificationManager.singleton.eventoConcluido(alertaN)
                 }
                 alertaN.nota = textNota.text.floatConverter
                 
