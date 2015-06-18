@@ -19,7 +19,6 @@ class DesempenhoViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelection = false
-        
         labelEmpty.text = "Nenhuma tarefa com nota encontrada"
         labelEmpty.font = UIFont(name: "Helvetica Neue Light", size: 16)
         labelEmpty.textColor = UIColor.darkGrayColor()

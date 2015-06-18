@@ -343,7 +343,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-nx-FQc">
-                                                    <rect key="frame" x="527" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="543" y="5" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="41f-sB-vB4"/>
                                                         <constraint firstAttribute="width" constant="49" id="DYG-zt-UNi"/>
@@ -353,7 +353,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6kl-O1-H7B" firstAttribute="leading" secondItem="6kR-Xj-gVP" secondAttribute="leadingMargin" constant="1" id="5gS-th-Cbe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FaH-nx-FQc" secondAttribute="trailing" constant="16" id="P4w-ZO-wH0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FaH-nx-FQc" secondAttribute="trailing" id="P4w-ZO-wH0"/>
                                                 <constraint firstAttribute="centerY" secondItem="FaH-nx-FQc" secondAttribute="centerY" constant="1.25" id="elI-BN-S8l"/>
                                                 <constraint firstItem="6kl-O1-H7B" firstAttribute="top" secondItem="6kR-Xj-gVP" secondAttribute="topMargin" constant="3" id="jGn-rS-RVA"/>
                                             </constraints>
@@ -462,10 +462,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Matemática" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-e7-hrL">
-                                            <rect key="frame" x="23" y="22" width="408" height="21"/>
+                                            <rect key="frame" x="23" y="22" width="408" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="408" id="7YL-pT-agw"/>
-                                                <constraint firstAttribute="height" constant="21" id="ObW-e4-OjD"/>
+                                                <constraint firstAttribute="height" constant="24" id="ObW-e4-OjD"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
