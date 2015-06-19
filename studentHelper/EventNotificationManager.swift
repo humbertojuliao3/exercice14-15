@@ -161,42 +161,43 @@ class EventNotificationManager: NSObject {
         let cal = NSMutableArray()
         let calendars = store.calendarsForEntityType(EKEntityTypeEvent) as! Array<EKCalendar>
         
-        
-        for calendar in calendars {
             
-            if calendar.title == "studentHelper" {
-                cal.addObject(calendar)
-                break
-            }
-        }
-        
-        let pred = store.predicateForEventsWithStartDate(firstDate, endDate: alerta.dataEntrega.dateByAddingTimeInterval(-60 * 60 * 24), calendars: cal as [AnyObject]);
-        
-        let eventos = NSMutableArray(array: store.eventsMatchingPredicate(pred))
-        var contDias = 7
-        
-        for e in eventos {
-            let evento = e as! EKEvent
-            var error:NSError?
+            for calendar in calendars {
             
-            if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dia(s))" {
-                
-                store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
-                if(error != nil){
-                    println("Could not save the event on calendar. Error: \(e)")
-                }
-                
-                contDias--
-                
-            }
-                
-            else if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina {
-                store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
-                if(error != nil){
-                    println("Could not save the event on calendar. Error: \(e)")
+                if calendar.title == "studentHelper" {
+                    cal.addObject(calendar)
+                    break
                 }
             }
-        }
+        
+            let pred = store.predicateForEventsWithStartDate(firstDate, endDate: alerta.dataEntrega.dateByAddingTimeInterval(-60 * 60 * 24), calendars: cal as [AnyObject]);
+        
+            let eventos = NSMutableArray(array: store.eventsMatchingPredicate(pred))
+            var contDias = 7
+            
+            for e in eventos {
+                let evento = e as! EKEvent
+                var error:NSError?
+            
+                if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dia(s))" {
+                
+                    store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
+                    if(error != nil){
+                        println("Could not save the event on calendar. Error: \(e)")
+                    }
+                
+                    contDias--
+                
+                }
+                
+                else if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina {
+                    store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
+                    if(error != nil){
+                        println("Could not save the event on calendar. Error: \(e)")
+                    }
+                }
+            }
+        
         
     }
     

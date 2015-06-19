@@ -451,10 +451,58 @@
         <scene sceneID="cZb-N1-Eja">
             <objects>
                 <tableViewController id="b0D-Yu-P2K" customClass="DesempenhoViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="B4Y-ff-W8K">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="B4Y-ff-W8K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Pbe-gA-3CD">
+                            <rect key="frame" x="0.0" y="64" width="600" height="391"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarefas Concluídas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-vb-mrq">
+                                    <rect key="frame" x="87" y="22" width="427" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="9Jo-oy-sw0"/>
+                                        <constraint firstAttribute="width" constant="427" id="ipD-fM-GtG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-sR-S4q">
+                                    <rect key="frame" x="256" y="49" width="88" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="N8I-Jm-mII"/>
+                                        <constraint firstAttribute="width" constant="88" id="c6p-3X-mef"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-MF-Qyj" customClass="PieGraphViewController" customModule="studentHelper" customModuleProvider="target">
+                                    <rect key="frame" x="180" y="107" width="240" height="240"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="240" id="NaS-ri-jFK"/>
+                                        <constraint firstAttribute="width" constant="240" id="dM4-0N-9f1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="piePercentage">
+                                            <real key="value" value="100"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="tLh-sR-S4q" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="49" id="6Js-Ur-uMQ"/>
+                                <constraint firstAttribute="centerX" secondItem="Urx-MF-Qyj" secondAttribute="centerX" id="76G-1V-Xtr"/>
+                                <constraint firstItem="UgK-vb-mrq" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="22" id="K9j-vC-ac3"/>
+                                <constraint firstAttribute="centerX" secondItem="tLh-sR-S4q" secondAttribute="centerX" id="Ljj-yc-8vp"/>
+                                <constraint firstItem="Urx-MF-Qyj" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="107" id="M60-zI-gdM"/>
+                                <constraint firstAttribute="centerX" secondItem="UgK-vb-mrq" secondAttribute="centerX" id="YDE-Ey-c3z"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DesempenhoCell" rowHeight="94" id="YPU-k7-hLk" customClass="DesempenhoCell" customModule="studentHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -533,10 +581,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelPercentage" destination="tLh-sR-S4q" id="y17-tw-ypw"/>
+                        <outlet property="pieGraphView" destination="Urx-MF-Qyj" id="GGj-G5-XJz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyq-5N-V3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-803" y="577"/>
+            <point key="canvasLocation" x="-803" y="541"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FWr-Nz-H6X">

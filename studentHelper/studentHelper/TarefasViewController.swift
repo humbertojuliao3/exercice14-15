@@ -51,7 +51,7 @@ class TarefasViewController: UITableViewController, UISearchBarDelegate, UISearc
         
         labelEmpty = UILabel()
         labelEmpty.text = "Nenhuma tarefa encontrada"
-        labelEmpty.font = UIFont(name: "Helvetica Neue Light", size: 16)
+        labelEmpty.font = UIFont(name: "Helvetica Neue-Light", size: 16)
         labelEmpty.textColor = UIColor.darkGrayColor()
         labelEmpty.textAlignment = NSTextAlignment.Center
         labelEmpty.sizeToFit()

@@ -67,12 +67,18 @@ class EditarTarefaViewController: UITableViewController {
                 
                 if switchStatus.on {
                     alertaN.status = true
+                    EventNotificationManager.singleton.apagarEvento(alertaN)
+                    EventNotificationManager.singleton.novoEvento(alertaN)
                 }
                 else{
                     alertaN.status = false
                     EventNotificationManager.singleton.eventoConcluido(alertaN)
                 }
                 alertaN.nota = textNota.text.floatConverter
+                
+                if textNota.text == "" {
+                    alertaN.nota = NSNumber(float: 99.9)
+                }
                 
                 //saving...
                 AlertaManager.sharedInstance.salvar()
