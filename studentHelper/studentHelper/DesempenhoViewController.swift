@@ -11,6 +11,7 @@ import UIKit
 import Social
 
 class DesempenhoViewController: UITableViewController {
+    @IBOutlet weak var buttonShare: UIBarButtonItem!
     @IBOutlet weak var pieGraphView: PieGraphViewController!
     @IBOutlet weak var labelPercentage: UILabel!
     
@@ -102,8 +103,11 @@ class DesempenhoViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
-
+    
     @IBAction func shareAction(sender: AnyObject) {
+        
+        
+        
         
         if notasArray.count > 0 {
         
@@ -166,6 +170,18 @@ class DesempenhoViewController: UITableViewController {
         
             let cancelarAction: UIAlertAction = UIAlertAction(title: "Cancelar", style: .Cancel) { action -> Void in}
             alerta.addAction(cancelarAction)
+            
+            
+            if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad {
+                alerta.modalPresentationStyle = UIModalPresentationStyle.Popover
+                
+                let popover = alerta.popoverPresentationController
+                
+                let itemView: UIView = buttonShare.valueForKey("view") as! UIView
+            
+                popover!.sourceView = itemView
+                popover!.sourceRect = itemView.bounds
+            }
             
             self.presentViewController(alerta, animated: true, completion: nil)
         }

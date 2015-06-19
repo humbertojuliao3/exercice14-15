@@ -488,7 +488,7 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="piePercentage">
-                                            <real key="value" value="100"/>
+                                            <real key="value" value="20"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -582,6 +582,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonShare" destination="8sa-vG-QJS" id="AjZ-CQ-SCk"/>
                         <outlet property="labelPercentage" destination="tLh-sR-S4q" id="y17-tw-ypw"/>
                         <outlet property="pieGraphView" destination="Urx-MF-Qyj" id="GGj-G5-XJz"/>
                     </connections>
