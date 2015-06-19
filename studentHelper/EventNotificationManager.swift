@@ -79,10 +79,18 @@ class EventNotificationManager: NSObject {
                     var event = EKEvent(eventStore: store)
                     event.calendar = i
                     
-                    if dia != 0{
+                    if dia > 1{
                         let diaString = String(format: "%g", dia)
-                        event.title = alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(diaString) dia(s))"
-                        event.notes = "Programe-se! \nFaltam \(diaString) dia(s)"
+                        event.title = alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(diaString) dias)"
+                        event.notes = "Programe-se! \nFaltam \(diaString) dias"
+                        event.startDate = alerta.dataEntrega.dateByAddingTimeInterval( -dia * 60 * 60 * 24)
+                        event.endDate = event.startDate.dateByAddingTimeInterval(1 * 60 * 60)
+                        event.addAlarm(EKAlarm(relativeOffset: -30))
+                    }
+                    else if dia == 1 {
+                        let diaString = String(format: "%g", dia)
+                        event.title = alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Falta \(diaString) dia)"
+                        event.notes = "Programe-se! \nFalta \(diaString) dia"
                         event.startDate = alerta.dataEntrega.dateByAddingTimeInterval( -dia * 60 * 60 * 24)
                         event.endDate = event.startDate.dateByAddingTimeInterval(1 * 60 * 60)
                         event.addAlarm(EKAlarm(relativeOffset: -30))
@@ -135,8 +143,19 @@ class EventNotificationManager: NSObject {
             let evento = e as! EKEvent
             var error:NSError?
             
-            if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dia(s))" {
+            if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dias)" {
             
+                store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
+                if(error != nil){
+                    println("Could not save the event on calendar. Error: \(e)")
+                }
+                
+                contDias--
+                
+            }
+                
+            else if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Falta 1 dia)" {
+                
                 store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
                 if(error != nil){
                     println("Could not save the event on calendar. Error: \(e)")
@@ -179,17 +198,28 @@ class EventNotificationManager: NSObject {
                 let evento = e as! EKEvent
                 var error:NSError?
             
-                if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dia(s))" {
-                
+                if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Faltam \(contDias) dias)" {
+                    
                     store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
                     if(error != nil){
                         println("Could not save the event on calendar. Error: \(e)")
                     }
-                
+                    
                     contDias--
-                
+                    
                 }
-                
+                    
+                else if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina + " (Falta 1 dia)" {
+                    
+                    store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
+                    if(error != nil){
+                        println("Could not save the event on calendar. Error: \(e)")
+                    }
+                    
+                    contDias--
+                    
+                }
+                    
                 else if evento.title == alerta.nomeAvaliacao + " - " + alerta.disciplina {
                     store.removeEvent(evento, span: EKSpanThisEvent, error: &error);
                     if(error != nil){
