@@ -19,33 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
-        let notificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-        let acceptAction = UIMutableUserNotificationAction()
-        acceptAction.identifier = "Accept"
-        acceptAction.title = "Accept"
-        acceptAction.activationMode = UIUserNotificationActivationMode.Background
-        acceptAction.destructive = false
-        acceptAction.authenticationRequired = false
-        
-        let declineAction = UIMutableUserNotificationAction()
-        declineAction.identifier = "Decline"
-        declineAction.title = "Decline"
-        declineAction.activationMode = UIUserNotificationActivationMode.Background
-        declineAction.destructive = false
-        declineAction.authenticationRequired = false
-        
-        
-        let category = UIMutableUserNotificationCategory()
-        category.identifier = "invite"
-        category.setActions([acceptAction, declineAction], forContext: UIUserNotificationActionContext.Default)
-        let categories = NSSet(array: [category])
-        let settings = UIUserNotificationSettings(forTypes: notificationType, categories: categories as Set<NSObject>)
-        application.registerUserNotificationSettings(settings)
-        
-//        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
-//            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
-        
-        
         return true
     }
 

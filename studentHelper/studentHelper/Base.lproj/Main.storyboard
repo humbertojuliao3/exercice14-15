@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l8r-zj-Tts">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l8r-zj-Tts">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -117,7 +117,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ca9-58-Amj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.67000001669999998" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Informações" id="TWN-vL-3OJ">
@@ -226,7 +226,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="hCE-SH-gMa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Informações" id="vYP-wm-snr">
                                 <cells>
@@ -343,7 +343,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FaH-nx-FQc">
-                                                    <rect key="frame" x="527" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="543" y="5" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="41f-sB-vB4"/>
                                                         <constraint firstAttribute="width" constant="49" id="DYG-zt-UNi"/>
@@ -353,7 +353,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6kl-O1-H7B" firstAttribute="leading" secondItem="6kR-Xj-gVP" secondAttribute="leadingMargin" constant="1" id="5gS-th-Cbe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FaH-nx-FQc" secondAttribute="trailing" constant="16" id="P4w-ZO-wH0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FaH-nx-FQc" secondAttribute="trailing" id="P4w-ZO-wH0"/>
                                                 <constraint firstAttribute="centerY" secondItem="FaH-nx-FQc" secondAttribute="centerY" constant="1.25" id="elI-BN-S8l"/>
                                                 <constraint firstItem="6kl-O1-H7B" firstAttribute="top" secondItem="6kR-Xj-gVP" secondAttribute="topMargin" constant="3" id="jGn-rS-RVA"/>
                                             </constraints>
@@ -434,7 +434,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f6D-CX-ULQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.8980392157" green="0.0" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.93983960151672363" green="0.12425797432661057" blue="0.27777901291847229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -451,10 +451,58 @@
         <scene sceneID="cZb-N1-Eja">
             <objects>
                 <tableViewController id="b0D-Yu-P2K" customClass="DesempenhoViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="B4Y-ff-W8K">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="B4Y-ff-W8K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Pbe-gA-3CD">
+                            <rect key="frame" x="0.0" y="64" width="600" height="391"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarefas Concluídas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-vb-mrq">
+                                    <rect key="frame" x="87" y="22" width="427" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="9Jo-oy-sw0"/>
+                                        <constraint firstAttribute="width" constant="427" id="ipD-fM-GtG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-sR-S4q">
+                                    <rect key="frame" x="256" y="49" width="88" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="N8I-Jm-mII"/>
+                                        <constraint firstAttribute="width" constant="88" id="c6p-3X-mef"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-MF-Qyj" customClass="PieGraphViewController" customModule="studentHelper" customModuleProvider="target">
+                                    <rect key="frame" x="180" y="107" width="240" height="240"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="240" id="NaS-ri-jFK"/>
+                                        <constraint firstAttribute="width" constant="240" id="dM4-0N-9f1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="piePercentage">
+                                            <real key="value" value="100"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="tLh-sR-S4q" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="49" id="6Js-Ur-uMQ"/>
+                                <constraint firstAttribute="centerX" secondItem="Urx-MF-Qyj" secondAttribute="centerX" id="76G-1V-Xtr"/>
+                                <constraint firstItem="UgK-vb-mrq" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="22" id="K9j-vC-ac3"/>
+                                <constraint firstAttribute="centerX" secondItem="tLh-sR-S4q" secondAttribute="centerX" id="Ljj-yc-8vp"/>
+                                <constraint firstItem="Urx-MF-Qyj" firstAttribute="top" secondItem="Pbe-gA-3CD" secondAttribute="top" constant="107" id="M60-zI-gdM"/>
+                                <constraint firstAttribute="centerX" secondItem="UgK-vb-mrq" secondAttribute="centerX" id="YDE-Ey-c3z"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DesempenhoCell" rowHeight="94" id="YPU-k7-hLk" customClass="DesempenhoCell" customModule="studentHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -462,13 +510,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Matemática" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-e7-hrL">
-                                            <rect key="frame" x="23" y="22" width="408" height="21"/>
+                                            <rect key="frame" x="23" y="22" width="408" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="408" id="7YL-pT-agw"/>
-                                                <constraint firstAttribute="height" constant="21" id="ObW-e4-OjD"/>
+                                                <constraint firstAttribute="height" constant="24" id="ObW-e4-OjD"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matemática" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-eY-XrR">
@@ -533,10 +581,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelPercentage" destination="tLh-sR-S4q" id="y17-tw-ypw"/>
+                        <outlet property="pieGraphView" destination="Urx-MF-Qyj" id="GGj-G5-XJz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyq-5N-V3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-803" y="577"/>
+            <point key="canvasLocation" x="-803" y="541"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FWr-Nz-H6X">

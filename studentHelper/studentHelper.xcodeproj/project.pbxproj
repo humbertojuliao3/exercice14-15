@@ -14,9 +14,10 @@
 		5C6495C41B1DCD560038D782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6495C31B1DCD560038D782 /* Images.xcassets */; };
 		5C6495C71B1DCD560038D782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6495C51B1DCD560038D782 /* LaunchScreen.xib */; };
 		5C6495D31B1DCD560038D782 /* studentHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495D21B1DCD560038D782 /* studentHelperTests.swift */; };
-		5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6495DE1B1DF8610038D782 /* Alarme.swift */; };
 		5E0767601B2916E5001C088B /* AlertaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07675F1B2916E5001C088B /* AlertaManager.swift */; };
 		5E356F791B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */; };
+		5E489E461B33AF8000E85A9F /* PieGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E489E451B33AF8000E85A9F /* PieGraphViewController.swift */; };
+		5EB1A4A11B3073A500970605 /* EventNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1A4A01B3073A500970605 /* EventNotificationManager.swift */; };
 		5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */; };
 		5ED4F7A41B2550270001C3D4 /* DesempenhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */; };
 		5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */; };
@@ -48,9 +49,10 @@
 		5C6495CC1B1DCD560038D782 /* studentHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studentHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6495D11B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495D21B1DCD560038D782 /* studentHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentHelperTests.swift; sourceTree = "<group>"; };
-		5C6495DE1B1DF8610038D782 /* Alarme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarme.swift; sourceTree = "<group>"; };
 		5E07675F1B2916E5001C088B /* AlertaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaManager.swift; sourceTree = "<group>"; };
 		5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarTarefaViewController.swift; sourceTree = "<group>"; };
+		5E489E451B33AF8000E85A9F /* PieGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphViewController.swift; sourceTree = "<group>"; };
+		5EB1A4A01B3073A500970605 /* EventNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNotificationManager.swift; sourceTree = "<group>"; };
 		5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarTarefaViewController.swift; sourceTree = "<group>"; };
 		5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesempenhoViewController.swift; sourceTree = "<group>"; };
 		5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		5C6495B61B1DCD560038D782 /* studentHelper */ = {
 			isa = PBXGroup;
 			children = (
+				5EB1A49F1B30735B00970605 /* EventKitNotification */,
 				84410F1C1B2E1FAE00C45EAD /* CloudKitModel */,
 				84D122101B296FAD00AFB799 /* CloudKit Manager */,
 				8405BE2F1B294C6800D86FE2 /* studentHelper.entitlements */,
@@ -114,6 +117,7 @@
 				5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */,
 				5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */,
 				5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */,
+				5E489E451B33AF8000E85A9F /* PieGraphViewController.swift */,
 				5C6495C01B1DCD560038D782 /* Main.storyboard */,
 				5C6495C31B1DCD560038D782 /* Images.xcassets */,
 				5C6495C51B1DCD560038D782 /* LaunchScreen.xib */,
@@ -162,6 +166,15 @@
 				5E07675F1B2916E5001C088B /* AlertaManager.swift */,
 			);
 			name = "CoreData Manager";
+			sourceTree = "<group>";
+		};
+		5EB1A49F1B30735B00970605 /* EventKitNotification */ = {
+			isa = PBXGroup;
+			children = (
+				5EB1A4A01B3073A500970605 /* EventNotificationManager.swift */,
+			);
+			name = EventKitNotification;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		84410F1C1B2E1FAE00C45EAD /* CloudKitModel */ = {
@@ -296,7 +309,9 @@
 				5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */,
 				5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */,
 				5C6495BD1B1DCD560038D782 /* studentHelper.xcdatamodeld in Sources */,
+				5EB1A4A11B3073A500970605 /* EventNotificationManager.swift in Sources */,
 				84D122121B296FE000AFB799 /* CloudKitHelper.swift in Sources */,
+				5E489E461B33AF8000E85A9F /* PieGraphViewController.swift in Sources */,
 				5C4AA45F1B2385D10097C91F /* Alerta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

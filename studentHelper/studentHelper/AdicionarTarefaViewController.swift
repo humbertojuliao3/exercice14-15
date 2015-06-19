@@ -15,12 +15,6 @@ class AdicionarTarefaViewController: UITableViewController {
     @IBOutlet weak var textMateria: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-//    lazy var moContext:NSManagedObjectContext = {
-//        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        var c = appDelegate.managedObjectContext
-//        return c!
-//        }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,26 +51,16 @@ class AdicionarTarefaViewController: UITableViewController {
                 
                 self.navigationController?.popViewControllerAnimated(true)
                 
-                //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
                 cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: alerta.status, nota: alerta.nota, data: alerta.dataEntrega)
             }
         }        
     }
+
+
     
-//    func preparaNotificacao(tarefa: Alarme){
-//        var notificacao = UILocalNotification()
-//        notificacao.fireDate = NSDate(timeIntervalSinceNow: 5)
-//        notificacao.alertTitle = "Atenção, data de tarefas chegando"
-//        notificacao.alertBody = "Fique atento, pois faltas xx dias para \(tarefa.nomeAvaliacao) - \(tarefa.disciplina)"
-//        notificacao.soundName = UILocalNotificationDefaultSoundName
-//        UIApplication.sharedApplication().scheduleLocalNotification(notificacao)
-//        
-//        
-//    }
-    
-    func removerTeclado(){
+    func removerTeclado() {
         view.endEditing(true)
     }
 }

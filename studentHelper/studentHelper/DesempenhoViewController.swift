@@ -11,7 +11,10 @@ import UIKit
 import Social
 
 class DesempenhoViewController: UITableViewController {
-    var labelEmpty: UILabel!
+    @IBOutlet weak var pieGraphView: PieGraphViewController!
+    @IBOutlet weak var labelPercentage: UILabel!
+    
+    var labelEmpty: UILabel = UILabel()
     
     var notasArray: Array<Alerta> = [Alerta]()
     
@@ -19,10 +22,8 @@ class DesempenhoViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelection = false
-        
-        labelEmpty = UILabel()
         labelEmpty.text = "Nenhuma tarefa com nota encontrada"
-        labelEmpty.font = UIFont(name: "Helvetica Neue Light", size: 16)
+        labelEmpty.font = UIFont(name: "Helvetica Neue-Light", size: 16)
         labelEmpty.textColor = UIColor.darkGrayColor()
         labelEmpty.textAlignment = NSTextAlignment.Center
         labelEmpty.sizeToFit()
@@ -54,6 +55,23 @@ class DesempenhoViewController: UITableViewController {
         notasArray.sort({ $0.disciplina < $1.disciplina })
         
         tableView.reloadData()
+        
+        
+        //Grafico de atividades concluidas
+        
+        
+        var contTarefaOk = 0
+        for tarefa in arrayData {
+            if tarefa.status == false {
+                contTarefaOk++
+            }
+        }
+        var percentage = (Double(contTarefaOk * 100)) / Double(arrayData.count)
+            
+        pieGraphView.piePercentage = percentage
+    
+        labelPercentage.text = String(format: "%.1f", Float(percentage)) + "%"
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -174,6 +192,14 @@ class DesempenhoViewController: UITableViewController {
             
             self.presentViewController(alerta, animated: true, completion: nil)
         }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "NOTAS"
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 94
     }
 
 }
