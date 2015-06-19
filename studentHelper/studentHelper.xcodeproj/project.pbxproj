@@ -20,6 +20,7 @@
 		5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */; };
 		5ED4F7A41B2550270001C3D4 /* DesempenhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */; };
 		5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */; };
+		8402D4AF1B312B6F00FB02E3 /* IcloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402D4AE1B312B6F00FB02E3 /* IcloudViewController.swift */; };
 		84410F221B2E252B00C45EAD /* CKModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84410F211B2E252B00C45EAD /* CKModel.swift */; };
 		84D1220F1B294FEC00AFB799 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D1220E1B294FEC00AFB799 /* CloudKit.framework */; };
 		84D122121B296FE000AFB799 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D122111B296FE000AFB799 /* CloudKitHelper.swift */; };
@@ -53,6 +54,7 @@
 		5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarTarefaViewController.swift; sourceTree = "<group>"; };
 		5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesempenhoViewController.swift; sourceTree = "<group>"; };
 		5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
+		8402D4AE1B312B6F00FB02E3 /* IcloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IcloudViewController.swift; sourceTree = "<group>"; };
 		8405BE2F1B294C6800D86FE2 /* studentHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = studentHelper.entitlements; sourceTree = "<group>"; };
 		84410F211B2E252B00C45EAD /* CKModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKModel.swift; sourceTree = "<group>"; };
 		84D1220E1B294FEC00AFB799 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 				5E07675E1B2916BE001C088B /* CoreData Manager */,
 				5E07675D1B2916AC001C088B /* Entidade */,
 				5C6495B91B1DCD560038D782 /* AppDelegate.swift */,
+				8402D4AE1B312B6F00FB02E3 /* IcloudViewController.swift */,
 				5C6495DE1B1DF8610038D782 /* Alarme.swift */,
 				5E356F781B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift */,
 				5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */,
@@ -287,6 +290,7 @@
 				84410F221B2E252B00C45EAD /* CKModel.swift in Sources */,
 				5E356F791B1F8FCC00C7DFD8 /* AdicionarTarefaViewController.swift in Sources */,
 				5E0767601B2916E5001C088B /* AlertaManager.swift in Sources */,
+				8402D4AF1B312B6F00FB02E3 /* IcloudViewController.swift in Sources */,
 				5C6495DF1B1DF8610038D782 /* Alarme.swift in Sources */,
 				5C6495BA1B1DCD560038D782 /* AppDelegate.swift in Sources */,
 				5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */,

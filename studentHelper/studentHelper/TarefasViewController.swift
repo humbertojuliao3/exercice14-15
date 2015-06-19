@@ -15,6 +15,7 @@ var arrayData = [Alerta]()
 
 class TarefasViewController: UITableViewController{
     
+
     var labelEmpty: UILabel!
     
     lazy var moContext:NSManagedObjectContext = {
@@ -81,8 +82,7 @@ class TarefasViewController: UITableViewController{
         cell.labelMateria.text = arrayData[indexPath.row].disciplina
         cell.labelData.text = "\(dataString) (\(horaString))"
         
-        
-        
+        println(arrayData[indexPath.row])
         return cell
     }
     

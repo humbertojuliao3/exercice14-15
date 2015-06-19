@@ -77,6 +77,8 @@ class EditarTarefaViewController: UITableViewController {
 
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
+                cloudKitHelper.updateTarefas(alertaN.nomeAvaliacao, materia: alertaN.disciplina, status: alertaN.status, nota: alertaN.nota, data: alertaN.dataEntrega)
+                
             }
         }
         

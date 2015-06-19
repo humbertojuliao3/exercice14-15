@@ -16,5 +16,5 @@ class Alerta: NSManagedObject {
     @NSManaged var dataEntrega: NSDate
     @NSManaged var status: NSNumber
     @NSManaged var nota: NSNumber
-
+    @NSManaged var controle: NSNumber
 }

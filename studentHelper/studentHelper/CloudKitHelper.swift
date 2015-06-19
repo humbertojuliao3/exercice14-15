@@ -14,6 +14,8 @@ protocol CloudKitDelegate {
     func modelUpdated()
 }
 
+
+
 class CloudKitHelper {
     var container: CKContainer
     var publicDB: CKDatabase
@@ -21,6 +23,7 @@ class CloudKitHelper {
     var delegate : CloudKitDelegate?
     var tarefas = [CKModel]()
     var provas = [CKModel]()
+    var recordID : CKRecordID?
     
     class func sharedInstance() -> CloudKitHelper {
         return cloudKitHelper
@@ -32,7 +35,7 @@ class CloudKitHelper {
         privateDB = container.privateCloudDatabase
     }
     
-    func saveTarefas (titulo : NSString, materia : NSString, status: NSString, nota: NSString, data: NSString){
+    func saveOrUpdateTarefas (titulo : NSString, materia : NSString, status: NSNumber, nota: NSNumber, data: NSDate){
         let tarefaRecord = CKRecord(recordType: "Tarefas")
         tarefaRecord.setValue(titulo, forKey: "Titulo")
         tarefaRecord.setValue(materia, forKey: "Materia")
@@ -53,6 +56,22 @@ class CloudKitHelper {
         provasRecord.setValue(provas, forKey: "Data")
         publicDB.saveRecord(provasRecord, completionHandler: {(record, error) -> Void in
             println("OKay")
+        })
+    }
+    
+    func updateTarefas(titulo : NSString, materia : NSString, status: NSNumber, nota: NSNumber, data: NSDate){
+        var recordId:CKRecordID = CKRecordID(recordName: "Tarefas")
+        publicDB.fetchRecordWithID(recordId, completionHandler: { record, error in
+            if let fetchError = error {
+                println("An error occurred in \(fetchError)")
+            } else {
+                let provasRecord = CKRecord(recordType: "Provas")
+                provasRecord.setValue(self.provas, forKey: "Titulo")
+                provasRecord.setValue(self.provas, forKey: "Materia")
+                provasRecord.setValue(self.provas, forKey: "Status")
+                provasRecord.setValue(self.provas, forKey: "Nota")
+                provasRecord.setValue(self.provas, forKey: "Data")
+            } 
         })
     }
     

@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 class CKModel: NSObject {
-    var record : CKRecord!
+    var record : CKRecordID?
     weak var database : CKDatabase!
     var titulo : String!
     var materia : String!
@@ -19,7 +19,7 @@ class CKModel: NSObject {
     var data : String!
     
     init(record : CKRecord, database: CKDatabase){
-        self.record = record
+        self.record = record.recordID
         self.database = database
         self.titulo = record.objectForKey("Titulo") as! String
         self.materia = record.objectForKey("Materia") as! String

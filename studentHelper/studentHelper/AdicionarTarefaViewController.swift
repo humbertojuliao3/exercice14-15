@@ -46,7 +46,6 @@ class AdicionarTarefaViewController: UITableViewController {
                 alerta.disciplina = textMateria.text
                 alerta.dataEntrega = datePicker.date
                 alerta.nota = 99.9
-                var notaString = "\(alerta.nota)"
                 alerta.status = true as NSNumber
                 if alerta.status == 0 {
                     statusString = "Não realizado"
@@ -56,16 +55,12 @@ class AdicionarTarefaViewController: UITableViewController {
                 var dataString = "\(alerta.dataEntrega)"
                 AlertaManager.sharedInstance.salvar()
                 
-                println("Data: \(dataString)")
-                println("Nota: \(notaString)")
-                
                 self.navigationController?.popViewControllerAnimated(true)
                 
                 //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
-                cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: statusString, nota: notaString, data: dataString)
-                
+                cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: alerta.status, nota: alerta.nota, data: alerta.dataEntrega)
             }
         }        
     }
