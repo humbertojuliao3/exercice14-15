@@ -49,8 +49,13 @@ class AdicionarTarefaViewController: UITableViewController {
                 var dataString = "\(alerta.dataEntrega)"
                 AlertaManager.sharedInstance.salvar()
                 
-                self.navigationController?.popViewControllerAnimated(true)
+                // Cria Evento
+                if EventNotificationManager.singleton.verificaAutorizacao() {
+                    EventNotificationManager.singleton.novoCalendario()
+                    EventNotificationManager.singleton.novoEvento(alerta)
+                }
                 
+                //preparaNotificacao(tarefa)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
                 cloudKitHelper.saveTarefas(alerta.nomeAvaliacao, materia: alerta.disciplina, status: alerta.status, nota: alerta.nota, data: alerta.dataEntrega)

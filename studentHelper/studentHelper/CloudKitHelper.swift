@@ -35,7 +35,7 @@ class CloudKitHelper {
         privateDB = container.privateCloudDatabase
     }
     
-    func saveOrUpdateTarefas (titulo : NSString, materia : NSString, status: NSNumber, nota: NSNumber, data: NSDate){
+    func saveTarefas (titulo : NSString, materia : NSString, status: NSNumber, nota: NSNumber, data: NSDate){
         let tarefaRecord = CKRecord(recordType: "Tarefas")
         tarefaRecord.setValue(titulo, forKey: "Titulo")
         tarefaRecord.setValue(materia, forKey: "Materia")
@@ -46,6 +46,8 @@ class CloudKitHelper {
             println("OKay")
         })
     }
+    
+    
     
     func saveProvas (provas : NSString){
         let provasRecord = CKRecord(recordType: "Provas")
@@ -77,7 +79,7 @@ class CloudKitHelper {
     
     func fetchTarefas(insertRecord: CKRecord?){
         let predicate = NSPredicate(value: true)
-        let sort = NSSortDescriptor(key: "creationDate", ascending: false)
+        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
         
         let query = CKQuery(recordType: "Tarefas", predicate: predicate)
         query.sortDescriptors = [sort]
