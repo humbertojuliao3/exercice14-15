@@ -19,7 +19,9 @@ class PieGraphViewController: UIView {
     
     @IBInspectable
     var piePercentage: Double = 0{
-        willSet(newPiePercentage) { updatePiePercentage(newPiePercentage)}
+        willSet(newPiePercentage) {
+            updatePiePercentage(newPiePercentage)
+        }
     }
     
     override func layoutSubviews() {
@@ -83,6 +85,7 @@ class PieGraphViewController: UIView {
                 CATransaction.begin()
                 CATransaction.setValue(kCFBooleanTrue, forKey:kCATransactionDisableActions)
                 self.pieOverLayer.strokeEnd = CGFloat(newPiePercentage/100)
+                
                 CATransaction.commit()
             })
             

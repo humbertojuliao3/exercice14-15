@@ -11,10 +11,9 @@ import UIKit
 import Social
 
 class DesempenhoViewController: UITableViewController {
+    @IBOutlet weak var buttonShare: UIBarButtonItem!
     @IBOutlet weak var pieGraphView: PieGraphViewController!
     @IBOutlet weak var labelPercentage: UILabel!
-    
-    var labelEmpty: UILabel = UILabel()
     
     var notasArray: Array<Alerta> = [Alerta]()
     
@@ -22,24 +21,8 @@ class DesempenhoViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelection = false
-        labelEmpty.text = "Nenhuma tarefa com nota encontrada"
-        labelEmpty.font = UIFont(name: "Helvetica Neue-Light", size: 16)
-        labelEmpty.textColor = UIColor.darkGrayColor()
-        labelEmpty.textAlignment = NSTextAlignment.Center
-        labelEmpty.sizeToFit()
-        labelEmpty.frame = CGRectMake((self.tableView.bounds.size.width - labelEmpty.bounds.size.width) / 2,
-            (self.tableView.bounds.size.height - labelEmpty.bounds.size.height) / 2,
-            labelEmpty.bounds.size.width,
-            labelEmpty.bounds.size.height)
-        self.tableView.insertSubview(labelEmpty, atIndex: 0)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        labelEmpty.frame = CGRectMake((size.width - labelEmpty.bounds.size.width) / 2,
-            (size.height - labelEmpty.bounds.size.height) / 2,
-            labelEmpty.bounds.size.width,
-            labelEmpty.bounds.size.height)
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -56,7 +39,6 @@ class DesempenhoViewController: UITableViewController {
         
         tableView.reloadData()
         
-        
         //Grafico de atividades concluidas
         
         
@@ -69,9 +51,13 @@ class DesempenhoViewController: UITableViewController {
         var percentage = (Double(contTarefaOk * 100)) / Double(arrayData.count)
             
         pieGraphView.piePercentage = percentage
-    
-        labelPercentage.text = String(format: "%.1f", Float(percentage)) + "%"
         
+        if percentage.isNaN {
+            labelPercentage.text = "0%"
+        }
+        else{
+            labelPercentage.text = String(format: "%.1f", Float(percentage)) + "%"
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -108,14 +94,6 @@ class DesempenhoViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if  notasArray.count == 0{
-            labelEmpty.hidden = false
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        }
-        else{
-            labelEmpty.hidden = true
-            tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        }
         
         println(notasArray.count)
         
@@ -125,8 +103,11 @@ class DesempenhoViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
-
+    
     @IBAction func shareAction(sender: AnyObject) {
+        
+        
+        
         
         if notasArray.count > 0 {
         
@@ -190,12 +171,30 @@ class DesempenhoViewController: UITableViewController {
             let cancelarAction: UIAlertAction = UIAlertAction(title: "Cancelar", style: .Cancel) { action -> Void in}
             alerta.addAction(cancelarAction)
             
+            
+            if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad {
+                alerta.modalPresentationStyle = UIModalPresentationStyle.Popover
+                
+                let popover = alerta.popoverPresentationController
+                
+                let itemView: UIView = buttonShare.valueForKey("view") as! UIView
+            
+                popover!.sourceView = itemView
+                popover!.sourceRect = itemView.bounds
+            }
+            
             self.presentViewController(alerta, animated: true, completion: nil)
         }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "NOTAS"
+        
+        if notasArray.count == 0 {
+            return "NENHUMA NOTA CADASTRADA"
+        }
+        else {
+            return "NOTAS"
+        }
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -34,7 +34,7 @@
                                                 <constraint firstAttribute="width" constant="476" id="Joj-Lz-73Q"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/06/2015 (18:30)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okh-uB-7sA">
@@ -332,11 +332,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Vb-sA-lrQ" id="6kR-Xj-gVP">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-O1-H7B">
-                                                    <rect key="frame" x="9" y="11" width="45" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em execução" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-O1-H7B">
+                                                    <rect key="frame" x="9" y="11" width="101" height="21"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="101" id="MTO-Pe-KPW"/>
                                                         <constraint firstAttribute="height" constant="21" id="UrH-Ng-K7d"/>
-                                                        <constraint firstAttribute="width" constant="45" id="sVx-Gy-2A7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,7 +454,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="B4Y-ff-W8K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Pbe-gA-3CD">
                             <rect key="frame" x="0.0" y="64" width="600" height="391"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -466,7 +466,7 @@
                                         <constraint firstAttribute="width" constant="427" id="ipD-fM-GtG"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-sR-S4q">
@@ -488,7 +488,7 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="piePercentage">
-                                            <real key="value" value="100"/>
+                                            <real key="value" value="20"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -543,7 +543,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.2938048243522644" green="0.8138422966003418" blue="0.77064251899719238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.26159811019897461" green="0.81780439615249634" blue="0.77468878030776978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="SBv-15-Zpq" firstAttribute="top" secondItem="6DQ-Ua-8QL" secondAttribute="top" constant="19" id="Gce-nw-KMn"/>
                                                 <constraint firstAttribute="height" constant="70" id="Rse-Te-NSM"/>
@@ -582,6 +582,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonShare" destination="8sa-vG-QJS" id="AjZ-CQ-SCk"/>
                         <outlet property="labelPercentage" destination="tLh-sR-S4q" id="y17-tw-ypw"/>
                         <outlet property="pieGraphView" destination="Urx-MF-Qyj" id="GGj-G5-XJz"/>
                     </connections>
