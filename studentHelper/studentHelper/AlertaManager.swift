@@ -59,4 +59,22 @@ public class AlertaManager {
         
         return Array<Alerta>()
     }
+    
+    func alertaOrdenado() -> Array<Alerta> {
+        let fetchRequest = NSFetchRequest(entityName: AlertaManager.entityName)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dataEntrega", ascending: true)]
+        var error:NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults as? [Alerta] {
+            return results
+        } else {
+            println("Could not fetch. Error: \(error), \(error!.userInfo)")
+        }
+        
+        NSFetchRequest(entityName: "FetchRequest")
+        
+        return Array<Alerta>()
+    }
 }
