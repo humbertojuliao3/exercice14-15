@@ -22,6 +22,7 @@ class EditarTarefaViewController: UITableViewController {
     var tarefaDisciplina: String!
     var tarefaData: NSDate!
     var indexTarefas: Int!
+    var statusInicial: Bool!
     
     var alertaN:Alerta!
 
@@ -40,6 +41,8 @@ class EditarTarefaViewController: UITableViewController {
             datePicker.date = alertaN.dataEntrega
             textNota.text = alertaN.nota.description
         //}
+        
+        statusInicial = alertaN.status as! Bool
         
         datePicker.minimumDate = NSDate()
         
@@ -71,8 +74,10 @@ class EditarTarefaViewController: UITableViewController {
                     EventNotificationManager.singleton.novoEvento(alertaN)
                 }
                 else{
-                    alertaN.status = false
-                    EventNotificationManager.singleton.eventoConcluido(alertaN)
+                    if statusInicial == true {
+                        alertaN.status = false
+                        EventNotificationManager.singleton.eventoConcluido(alertaN)
+                    }
                 }
                 alertaN.nota = textNota.text.floatConverter
                 

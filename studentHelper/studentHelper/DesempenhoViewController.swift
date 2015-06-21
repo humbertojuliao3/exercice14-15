@@ -53,7 +53,13 @@ class DesempenhoViewController: UITableViewController {
         pieGraphView.piePercentage = percentage
         
         if percentage.isNaN {
-            labelPercentage.text = "0%"
+            if arrayData.count > 0 {
+                labelPercentage.text = "0%"
+            }
+            else {
+                labelPercentage.text = "100.0%"
+            }
+
         }
         else{
             labelPercentage.text = String(format: "%.1f", Float(percentage)) + "%"
