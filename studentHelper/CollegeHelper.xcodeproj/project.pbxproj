@@ -21,7 +21,6 @@
 		5EB4F5F41B2001F8006BC439 /* EditarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */; };
 		5ED4F7A41B2550270001C3D4 /* DesempenhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */; };
 		5EF16F0A1B1FA54600F415E9 /* TarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */; };
-		84D1220F1B294FEC00AFB799 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D1220E1B294FEC00AFB799 /* CloudKit.framework */; };
 		84DF0FDA1B36702600C2A706 /* CalendarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF0FD91B36702600C2A706 /* CalendarioViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,14 +36,14 @@
 
 /* Begin PBXFileReference section */
 		5C4AA45E1B2385D10097C91F /* Alerta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerta.swift; path = ../Alerta.swift; sourceTree = "<group>"; };
-		5C6495B41B1DCD560038D782 /* studentHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studentHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6495B41B1DCD560038D782 /* CollegeHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6495B81B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495B91B1DCD560038D782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6495BC1B1DCD560038D782 /* studentHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = studentHelper.xcdatamodel; sourceTree = "<group>"; };
 		5C6495C11B1DCD560038D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C6495C31B1DCD560038D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C6495C61B1DCD560038D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5C6495CC1B1DCD560038D782 /* studentHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = studentHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6495D11B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495D21B1DCD560038D782 /* studentHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentHelperTests.swift; sourceTree = "<group>"; };
 		5E07675F1B2916E5001C088B /* AlertaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaManager.swift; sourceTree = "<group>"; };
@@ -54,8 +53,6 @@
 		5EB4F5F31B2001F8006BC439 /* EditarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarTarefaViewController.swift; sourceTree = "<group>"; };
 		5ED4F7A31B2550270001C3D4 /* DesempenhoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesempenhoViewController.swift; sourceTree = "<group>"; };
 		5EF16F091B1FA54600F415E9 /* TarefasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefasViewController.swift; sourceTree = "<group>"; };
-		8405BE2F1B294C6800D86FE2 /* studentHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = studentHelper.entitlements; sourceTree = "<group>"; };
-		84D1220E1B294FEC00AFB799 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		84DF0FD91B36702600C2A706 /* CalendarioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D1220F1B294FEC00AFB799 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +77,6 @@
 		5C6495AB1B1DCD560038D782 = {
 			isa = PBXGroup;
 			children = (
-				84D1220E1B294FEC00AFB799 /* CloudKit.framework */,
 				5C6495B61B1DCD560038D782 /* studentHelper */,
 				5C6495CF1B1DCD560038D782 /* studentHelperTests */,
 				5C6495B51B1DCD560038D782 /* Products */,
@@ -91,8 +86,8 @@
 		5C6495B51B1DCD560038D782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5C6495B41B1DCD560038D782 /* studentHelper.app */,
-				5C6495CC1B1DCD560038D782 /* studentHelperTests.xctest */,
+				5C6495B41B1DCD560038D782 /* CollegeHelper.app */,
+				5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				5EB1A49F1B30735B00970605 /* EventKitNotification */,
-				8405BE2F1B294C6800D86FE2 /* studentHelper.entitlements */,
 				5E07675E1B2916BE001C088B /* CoreData Manager */,
 				5E07675D1B2916AC001C088B /* Entidade */,
 				5C6495B91B1DCD560038D782 /* AppDelegate.swift */,
@@ -173,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5C6495B31B1DCD560038D782 /* studentHelper */ = {
+		5C6495B31B1DCD560038D782 /* CollegeHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5C6495D61B1DCD560038D782 /* Build configuration list for PBXNativeTarget "studentHelper" */;
+			buildConfigurationList = 5C6495D61B1DCD560038D782 /* Build configuration list for PBXNativeTarget "CollegeHelper" */;
 			buildPhases = (
 				5C6495B01B1DCD560038D782 /* Sources */,
 				5C6495B11B1DCD560038D782 /* Frameworks */,
@@ -185,14 +179,14 @@
 			);
 			dependencies = (
 			);
-			name = studentHelper;
+			name = CollegeHelper;
 			productName = studentHelper;
-			productReference = 5C6495B41B1DCD560038D782 /* studentHelper.app */;
+			productReference = 5C6495B41B1DCD560038D782 /* CollegeHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5C6495CB1B1DCD560038D782 /* studentHelperTests */ = {
+		5C6495CB1B1DCD560038D782 /* CollegeHelperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5C6495D91B1DCD560038D782 /* Build configuration list for PBXNativeTarget "studentHelperTests" */;
+			buildConfigurationList = 5C6495D91B1DCD560038D782 /* Build configuration list for PBXNativeTarget "CollegeHelperTests" */;
 			buildPhases = (
 				5C6495C81B1DCD560038D782 /* Sources */,
 				5C6495C91B1DCD560038D782 /* Frameworks */,
@@ -203,9 +197,9 @@
 			dependencies = (
 				5C6495CE1B1DCD560038D782 /* PBXTargetDependency */,
 			);
-			name = studentHelperTests;
+			name = CollegeHelperTests;
 			productName = studentHelperTests;
-			productReference = 5C6495CC1B1DCD560038D782 /* studentHelperTests.xctest */;
+			productReference = 5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -219,10 +213,10 @@
 				TargetAttributes = {
 					5C6495B31B1DCD560038D782 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = S79QP49F29;
+						DevelopmentTeam = C3G98NPYVF;
 						SystemCapabilities = {
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -232,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5C6495AF1B1DCD560038D782 /* Build configuration list for PBXProject "studentHelper" */;
+			buildConfigurationList = 5C6495AF1B1DCD560038D782 /* Build configuration list for PBXProject "CollegeHelper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -245,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5C6495B31B1DCD560038D782 /* studentHelper */,
-				5C6495CB1B1DCD560038D782 /* studentHelperTests */,
+				5C6495B31B1DCD560038D782 /* CollegeHelper */,
+				5C6495CB1B1DCD560038D782 /* CollegeHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,7 +297,7 @@
 /* Begin PBXTargetDependency section */
 		5C6495CE1B1DCD560038D782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5C6495B31B1DCD560038D782 /* studentHelper */;
+			target = 5C6495B31B1DCD560038D782 /* CollegeHelper */;
 			targetProxy = 5C6495CD1B1DCD560038D782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -415,12 +409,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = studentHelper/studentHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = studentHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CollegeHelper;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -429,12 +422,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = studentHelper/studentHelper.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = studentHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CollegeHelper;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -451,10 +443,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = studentHelperTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studentHelper.app/studentHelper";
+				PRODUCT_NAME = CollegeHelperTests;
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -466,17 +458,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = studentHelperTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/studentHelper.app/studentHelper";
+				PRODUCT_NAME = CollegeHelperTests;
+				TEST_HOST = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5C6495AF1B1DCD560038D782 /* Build configuration list for PBXProject "studentHelper" */ = {
+		5C6495AF1B1DCD560038D782 /* Build configuration list for PBXProject "CollegeHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C6495D41B1DCD560038D782 /* Debug */,
@@ -485,7 +477,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5C6495D61B1DCD560038D782 /* Build configuration list for PBXNativeTarget "studentHelper" */ = {
+		5C6495D61B1DCD560038D782 /* Build configuration list for PBXNativeTarget "CollegeHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C6495D71B1DCD560038D782 /* Debug */,
@@ -494,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5C6495D91B1DCD560038D782 /* Build configuration list for PBXNativeTarget "studentHelperTests" */ = {
+		5C6495D91B1DCD560038D782 /* Build configuration list for PBXNativeTarget "CollegeHelperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C6495DA1B1DCD560038D782 /* Debug */,
