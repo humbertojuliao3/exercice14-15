@@ -1,6 +1,6 @@
 //
 //  CalendarioViewController.swift
-//  studentHelper
+//  collegeHelper
 //
 //  Created by Sidney Silva on 6/21/15.
 //  Copyright (c) 2015 Humberto  Julião. All rights reserved.

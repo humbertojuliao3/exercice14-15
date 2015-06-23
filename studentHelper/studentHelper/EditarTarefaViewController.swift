@@ -1,6 +1,6 @@
 //
 //  EditarTarefaViewController.swift
-//  studentHelper
+//  collegeHelper
 //
 //  Created by Gabriel Alberto de Jesus Preto on 04/06/15.
 //  Copyright (c) 2015 Humberto  Julião. All rights reserved.
@@ -89,8 +89,6 @@ class EditarTarefaViewController: UITableViewController {
                 AlertaManager.sharedInstance.salvar()
 
                 self.navigationController?.popToRootViewControllerAnimated(true)
-                
-                cloudKitHelper.updateTarefas(alertaN.nomeAvaliacao, materia: alertaN.disciplina, status: alertaN.status, nota: alertaN.nota, data: alertaN.dataEntrega)
                 
             }
         }

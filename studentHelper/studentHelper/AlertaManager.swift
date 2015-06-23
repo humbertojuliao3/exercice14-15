@@ -1,6 +1,6 @@
 //
 //  AlertaManager.swift
-//  studentHelper
+//  collegeHelper
 //
 //  Created by Gabriel Alberto de Jesus Preto on 10/06/15.
 //  Copyright (c) 2015 Humberto  Julião. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  Alerta.swift
-//  studentHelper
+//  collegeHelper
 //
 //  Created by Humberto  Julião on 06/06/15.
 //  Copyright (c) 2015 Humberto  Julião. All rights reserved.

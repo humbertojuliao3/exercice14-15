@@ -1,6 +1,6 @@
 //
 //  EventNotificationManager.swift
-//  studentHelper
+//  collegeHelper
 //
 //  Created by Gabriel Alberto de Jesus Preto on 16/06/15.
 //  Copyright (c) 2015 Humberto  Julião. All rights reserved.
@@ -28,7 +28,7 @@ class EventNotificationManager: NSObject {
         
         for i in arrayCalendarios{
             //Alterar nome do calendario quando o nome do app mudar
-            if i.title == "studentHelper" {
+            if i.title == "collegeHelper" {
                 isCriado = true
                 break
             }
@@ -40,7 +40,7 @@ class EventNotificationManager: NSObject {
                 
             //Alterar nome do calendario quando o nome do app mudar
                 
-            calendario.title = "studentHelper"
+            calendario.title = "collegeHelper"
             calendario.CGColor = UIColor(red: 237/265, green: 37/265, blue: 75/265, alpha: 1).CGColor
                 
                 
@@ -71,7 +71,7 @@ class EventNotificationManager: NSObject {
         for i in arrayCalendarios{
             
             //Alterar nome do calendario quando o nome do app mudar
-            if i.title == "studentHelper" {
+            if i.title == "collegeHelper" {
                 
     
                 for (var dia:Double = 7 ; dia >= 0; dia--){
@@ -128,7 +128,7 @@ class EventNotificationManager: NSObject {
         
         for calendar in calendars {
             
-            if calendar.title == "studentHelper" {
+            if calendar.title == "collegeHelper" {
                 cal.addObject(calendar)
                 break
             }
@@ -183,7 +183,7 @@ class EventNotificationManager: NSObject {
             
             for calendar in calendars {
             
-                if calendar.title == "studentHelper" {
+                if calendar.title == "collegeHelper" {
                     cal.addObject(calendar)
                     break
                 }
