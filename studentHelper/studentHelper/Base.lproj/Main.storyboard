@@ -8,7 +8,7 @@
         <!--Tarefas-->
         <scene sceneID="RCk-6S-Kz9">
             <objects>
-                <tableViewController id="2Bf-JR-2at" customClass="TarefasViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2Bf-JR-2at" customClass="TarefasViewController" customModule="CollegeHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="4rX-NH-flD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="3" indentationWidth="10" reuseIdentifier="TarefaCell" rowHeight="94" id="WOX-nX-0Mg" customClass="TarefasCell" customModule="studentHelper" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="3" indentationWidth="10" reuseIdentifier="TarefaCell" rowHeight="94" id="WOX-nX-0Mg" customClass="TarefasCell" customModule="CollegeHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOX-nX-0Mg" id="i3n-0M-CkZ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -113,7 +113,7 @@
         <!--Adicionar Tarefa-->
         <scene sceneID="ATz-bY-Byh">
             <objects>
-                <tableViewController id="cJc-nk-len" customClass="AdicionarTarefaViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cJc-nk-len" customClass="AdicionarTarefaViewController" customModule="CollegeHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ca9-58-Amj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +222,7 @@
         <!--Alterar Tarefa-->
         <scene sceneID="x2z-Le-Th0">
             <objects>
-                <tableViewController id="p6S-1b-blW" customClass="EditarTarefaViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="p6S-1b-blW" customClass="EditarTarefaViewController" customModule="CollegeHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="hCE-SH-gMa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,13 +410,13 @@
         <!--Calendário-->
         <scene sceneID="d5N-Cc-BoO">
             <objects>
-                <tableViewController id="Vm5-CZ-4SK" customClass="CalendarioViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Vm5-CZ-4SK" customClass="CalendarioViewController" customModule="CollegeHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" id="xah-Mo-sQ8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarioCell" rowHeight="93" id="UG4-Pp-ak1" customClass="CalendarioCell" customModule="studentHelper" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarioCell" rowHeight="93" id="UG4-Pp-ak1" customClass="CalendarioCell" customModule="CollegeHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UG4-Pp-ak1" id="gRI-QF-isI">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -500,7 +500,7 @@
         <!--Desempenho-->
         <scene sceneID="cZb-N1-Eja">
             <objects>
-                <tableViewController id="b0D-Yu-P2K" customClass="DesempenhoViewController" customModule="studentHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="b0D-Yu-P2K" customClass="DesempenhoViewController" customModule="CollegeHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="B4Y-ff-W8K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -529,7 +529,7 @@
                                     <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-MF-Qyj" customClass="PieGraphViewController" customModule="studentHelper" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-MF-Qyj" customClass="PieGraphViewController" customModule="CollegeHelper" customModuleProvider="target">
                                     <rect key="frame" x="180" y="107" width="240" height="240"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -554,7 +554,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DesempenhoCell" rowHeight="94" id="YPU-k7-hLk" customClass="DesempenhoCell" customModule="studentHelper" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DesempenhoCell" rowHeight="94" id="YPU-k7-hLk" customClass="DesempenhoCell" customModule="CollegeHelper" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YPU-k7-hLk" id="xsD-9k-com">
                                     <autoresizingMask key="autoresizingMask"/>

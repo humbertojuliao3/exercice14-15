@@ -43,7 +43,7 @@
 		5C6495C11B1DCD560038D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C6495C31B1DCD560038D782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C6495C61B1DCD560038D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6495CC1B1DCD560038D782 /* CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6495D11B1DCD560038D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6495D21B1DCD560038D782 /* studentHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentHelperTests.swift; sourceTree = "<group>"; };
 		5E07675F1B2916E5001C088B /* AlertaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaManager.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				5C6495B41B1DCD560038D782 /* CollegeHelper.app */,
-				5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */,
+				5C6495CC1B1DCD560038D782 /* CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			);
 			name = CollegeHelperTests;
 			productName = studentHelperTests;
-			productReference = 5C6495CC1B1DCD560038D782 /* CollegeHelperTests.xctest */;
+			productReference = 5C6495CC1B1DCD560038D782 /* CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -445,7 +445,7 @@
 				);
 				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = CollegeHelperTests;
+				PRODUCT_NAME = CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests;
 				TEST_HOST = "";
 			};
 			name = Debug;
@@ -460,7 +460,7 @@
 				);
 				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = CollegeHelperTests;
+				PRODUCT_NAME = CollegeHelpe.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests;
 				TEST_HOST = "";
 			};
 			name = Release;

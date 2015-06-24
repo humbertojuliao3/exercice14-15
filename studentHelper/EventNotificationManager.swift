@@ -134,7 +134,7 @@ class EventNotificationManager: NSObject {
             }
         }
         
-        let pred = store.predicateForEventsWithStartDate(firstDate, endDate: alerta.dataEntrega.dateByAddingTimeInterval(60 * 60 * 24), calendars: cal as [AnyObject]);
+        let pred = store.predicateForEventsWithStartDate(firstDate, endDate: alerta.dataEntrega.dateByAddingTimeInterval(60 * 60 * 24), calendars: cal as [AnyObject])
         
         let eventos = NSMutableArray(array: store.eventsMatchingPredicate(pred))
         var contDias = 7
